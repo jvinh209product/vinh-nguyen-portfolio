@@ -1,0 +1,847 @@
+{
+  "projects": [
+    {
+      "slug": "debt-ledger",
+      "number": "01",
+      "name": "Debt Ledger",
+      "eyebrow": "01 / AUTOMATED DEBT TRACKING",
+      "title": "Make the balance explainable.",
+      "deck": "A debt-tracking product needs a clear relationship between what the user sees and what the system records. My work connected the journey, the business logic, and the path to release.",
+      "fields": [
+        [
+          "Product",
+          "Debt Ledger"
+        ],
+        [
+          "Contribution",
+          "Discovery-to-delivery ownership"
+        ],
+        [
+          "Focus",
+          "User journeys, business logic, delivery alignment"
+        ],
+        [
+          "Delivery milestone",
+          "Shipped in two months across four sprints"
+        ],
+        [
+          "Product experience shown",
+          "Debt accounts, payment history, QR payment request"
+        ]
+      ],
+      "sections": [
+        {
+          "title": "Domain context",
+          "body": "Debt tracking connects a relationship with a record: who owes an amount, what has been paid, and what remains. That record needs to stay understandable when events do not arrive in a neat sequence. A partial payment, a repeated notification, or a later correction can change what the product needs to explain.\n\nMy work on Debt Ledger covered discovery through delivery, mapping user journeys into business logic and helping resolve cross-functional bottlenecks. The product shipped in two months across four sprints. The part of that work I want to make visible is how a journey becomes precise enough for different people to discuss the same behavior.",
+          "id": "domain-context",
+          "kind": "text"
+        },
+        {
+          "title": "The product question",
+          "body": "**How do you make debt tracking clear enough to use and precise enough to implement?**\n\nA debt balance represents several events: an amount owed, a payment, and sometimes a correction. The useful experience connects those events so someone can understand the remaining amount and see the records behind it.\n\nThe challenge was to translate that workflow into an automated debt-tracking product within a short delivery window. A polished overview alone would not resolve the underlying questions about how the workflow should behave.",
+          "id": "the-product-question",
+          "kind": "text"
+        },
+        {
+          "title": "What I owned",
+          "body": "I owned the discovery-to-delivery lifecycle. I mapped user journeys and translated them into business logic, helping resolve cross-functional bottlenecks and maintain alignment through delivery.\n\nMy contribution was the connection between the user's task and the behavior the team needed to implement. The product shipped in two months across four sprints.",
+          "id": "what-i-owned",
+          "kind": "text"
+        },
+        {
+          "title": "From the journey to the rules",
+          "body": "The product views connect debt accounts, transaction history, and a QR payment request. They represent connected parts of the workflow:\n\n1. Understand what is owed.\n2. Inspect the records associated with the balance.\n3. Request or record a payment.\n4. Understand the resulting status and remaining amount.\n\nMapping that relationship matters because every visible action implies a business rule. A payment action needs a definition of when the payment is recognized. A history view needs to explain the event. A balance needs to remain consistent with the records that support it.\n\nThis is the kind of detail I want to make explicit when moving from discovery into implementation.",
+          "id": "from-the-journey-to-the-rules",
+          "kind": "text"
+        },
+        {
+          "title": "The screens and the decisions",
+          "body": "",
+          "id": "the-screens-and-the-decisions",
+          "kind": "gallery"
+        },
+        {
+          "title": "Decision notes",
+          "body": "Looking back at the choices behind the experience.",
+          "id": "decision-notes",
+          "kind": "decisions"
+        },
+        {
+          "title": "Looking back — the decisions I would make explicit",
+          "body": "**1. Define what is allowed to change the balance.**\n\nA useful starting point is to separate a payment request from a confirmed payment. A QR code can provide payment context; it cannot, by itself, establish that money arrived. I would define the confirmation source and the rules for applying a payment with the technical and business owners.\n\n**2. Give exceptions a visible route.**\n\nPartial payments, repeated notifications, unmatched payments, and reversals raise different questions. I would specify the expected behavior for each before treating automation as complete. Where a payment cannot be matched confidently, a visible review state gives the team a way to resolve uncertainty.\n\n**3. Preserve an explanation when something changes.**\n\nIf a recorded payment is corrected or reversed, I would preserve a traceable relationship to the original event. The user should be able to understand the new balance without losing the history that explains it.\n\nThese are retrospective design and analysis principles. They describe how I would make the product more explicit; they are not a claim that every example below shipped in the initial release.",
+          "id": "looking-back-the-decisions-i-would-make-explicit",
+          "kind": "text"
+        },
+        {
+          "title": "A small illustration of the thinking",
+          "body": "Start with VND 1,000,000 owed. Select each event to see how the balance and review queue relate.\n\nThis illustrates the reasoning. It is not a description of every rule shipped in the original release.",
+          "id": "a-small-illustration-of-the-thinking",
+          "kind": "ledger"
+        },
+        {
+          "title": "The delivery result",
+          "body": "The product shipped in two months across four sprints. My work covered discovery, journey mapping, business logic, and delivery alignment.\n\nThat milestone demonstrates delivery. To judge the product's continuing value, I would look separately at adoption, reconciliation effort, and the reliability of the resulting records.",
+          "id": "the-delivery-result",
+          "kind": "text"
+        },
+        {
+          "title": "What I would measure next",
+          "body": "| Question | Measure I would define |\n| --- | --- |\n| Does it reduce operating effort? | Time needed to reconcile a comparable workload |\n| Is the automation useful? | Correctly matched eligible payments, with incorrect matches tracked separately |\n| Can users trust the record? | Balance corrections and unresolved exceptions per defined transaction volume |\n| Does it become part of routine work? | Continued meaningful ledger use by a defined merchant cohort |\n\nI would inspect the most frequent exceptions before adding more features. If people spend their time correcting or explaining a balance, that is a concrete place to investigate.",
+          "id": "what-i-would-measure-next",
+          "kind": "text"
+        },
+        {
+          "title": "Personal reflection",
+          "body": "**Every number should have a story the system can explain.**\n\nFor me, this is where business analysis becomes tangible. The balance, the history, and the available action need to describe the same situation. Making that relationship explicit gives the team a better basis for implementation and gives the user a clearer record to work with.",
+          "id": "personal-reflection",
+          "kind": "text"
+        }
+      ],
+      "line": "Make the balance explainable.",
+      "description": "Connecting debt-tracking journeys with business logic and delivery, with a release shipped in two months across four sprints.",
+      "focus": "Business analysis · Product delivery",
+      "decisions": [
+        {
+          "question": "What should be allowed to change the outstanding balance?",
+          "options": "Treat a payment request as sufficient; rely on a person to confirm every change; or define a trusted confirmation event and send uncertain cases to review.",
+          "reasoning": "I would separate the request from the evidence that payment occurred. I would also give repeated events and corrections explicit rules, so the same payment cannot silently change the balance twice and a correction retains an explanation.",
+          "check": "Walk through complete examples with business and technical colleagues. For each event, compare the balance, the history, and the action available to the user. Then evaluate real reconciliation effort and exception patterns after release."
+        }
+      ],
+      "annotations": [
+        "The balance needs an explanation.",
+        "The history should make every change traceable.",
+        "A payment request is different from confirmation."
+      ],
+      "gallery": [
+        {
+          "src": "/images/projects/debt-ledger-screen-01.webp",
+          "width": 235,
+          "height": 564,
+          "caption": "Balance overview and account list",
+          "alt": "Debt Ledger: Balance overview and account list (identifying details masked)",
+          "sourceProject": "Debt Ledger",
+          "kind": "Original app screen",
+          "annotation": "The balance needs an explanation."
+        },
+        {
+          "src": "/images/projects/debt-ledger-screen-02.webp",
+          "width": 235,
+          "height": 509,
+          "caption": "Debt detail and payment history",
+          "alt": "Debt Ledger: Debt detail and payment history (identifying details masked)",
+          "sourceProject": "Debt Ledger",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/debt-ledger-screen-03.webp",
+          "width": 235,
+          "height": 689,
+          "caption": "Notification history",
+          "alt": "Debt Ledger: Notification history (identifying details masked)",
+          "sourceProject": "Debt Ledger",
+          "kind": "Original app screen",
+          "annotation": "A payment request is different from confirmation."
+        },
+        {
+          "src": "/images/projects/debt-ledger-screen-04.webp",
+          "width": 235,
+          "height": 509,
+          "caption": "Before and after a correction",
+          "alt": "Debt Ledger: Before and after a correction (identifying details masked)",
+          "sourceProject": "Debt Ledger",
+          "kind": "Original app screen",
+          "annotation": "The history should make every change traceable."
+        },
+        {
+          "src": "/images/projects/debt-ledger-screen-05.webp",
+          "width": 235,
+          "height": 509,
+          "caption": "Payment request",
+          "alt": "Debt Ledger: Payment request (identifying details masked)",
+          "sourceProject": "Debt Ledger",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/debt-ledger-screen-06.webp",
+          "width": 235,
+          "height": 509,
+          "caption": "Payment confirmation",
+          "alt": "Debt Ledger: Payment confirmation (identifying details masked)",
+          "sourceProject": "Debt Ledger",
+          "kind": "Original app screen",
+          "annotation": ""
+        }
+      ],
+      "original": {
+        "src": "/images/projects/debt-ledger-original-board.webp",
+        "width": 2048,
+        "height": 768,
+        "caption": "Complete supplied screen board",
+        "kind": "Original screen board · identifying details masked",
+        "sourceProject": "Debt Ledger",
+        "alt": "Complete Debt Ledger app screen board, with identifying details masked",
+        "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+      },
+      "detail": {
+        "src": "/images/projects/debt-ledger-detail.webp",
+        "width": 208,
+        "height": 190
+      }
+    },
+    {
+      "slug": "mseller",
+      "number": "02",
+      "name": "mSeller",
+      "eyebrow": "02 / MERCHANT OPERATIONS",
+      "title": "Make the next action obvious.",
+      "deck": "Merchant software needs to fit the work happening around it. My contribution combined business analysis and UI/UX design to simplify core actions and connect onboarding with the payment experience.",
+      "fields": [
+        [
+          "Product",
+          "mSeller"
+        ],
+        [
+          "Project role",
+          "Lead Business Analyst & UI/UX Designer"
+        ],
+        [
+          "Context",
+          "Merchant operations, illustrated through restaurant workflows"
+        ],
+        [
+          "Contribution",
+          "Interface simplification, guided onboarding, early dynamic QR integration"
+        ],
+        [
+          "Experience focus",
+          "Orders, tables, shifts, and payments"
+        ]
+      ],
+      "sections": [
+        {
+          "title": "Domain context",
+          "body": "Merchant operations connect several states that need to remain understandable: which table or order is active, what still needs attention, and whether payment is complete. The interface is one part of that operating context. Its hierarchy needs to support the person doing the work at the moment they need it.\n\nI am interested in the connection between a business process and the action the screen makes prominent. In mSeller, my business analysis and UI/UX work included simplifying core flows around one or two primary actions, guided onboarding, and early dynamic QR integration. The important question behind that simplification is whether the person still has enough context to choose correctly.",
+          "id": "domain-context",
+          "kind": "text"
+        },
+        {
+          "title": "The product question",
+          "body": "**How can software help staff move through a task without repeatedly making them interpret the interface?**\n\nThe presented workflows move between table status, orders, shift setup, and payment. Each moment has a different immediate purpose. An interface that gives everything the same visual priority makes that purpose harder to recognize.\n\nMy objective was to simplify the operating experience by making the relevant action easier to identify.",
+          "id": "the-product-question",
+          "kind": "text"
+        },
+        {
+          "title": "What I contributed",
+          "body": "As Lead Business Analyst and UI/UX Designer, I simplified the interface and organized core flows around one or two primary actions. I also worked on early dynamic QR integration and created custom animated onboarding to guide key interactions.\n\nThe action count describes visual priority. It is not a claim that every merchant task was completed in two taps.",
+          "id": "what-i-contributed",
+          "kind": "text"
+        },
+        {
+          "title": "The connection between workflow and interface",
+          "body": "A table overview supports a different decision from an order detail or payment screen. Business analysis helps establish what that decision is; interface hierarchy helps make it visible.\n\nFor me, this is the valuable connection between the two disciplines. A primary action should be the natural next step in a well-understood workflow. It should not have to compensate for an unclear process.",
+          "id": "the-connection-between-workflow-and-interface",
+          "kind": "text"
+        },
+        {
+          "title": "The screens and the decisions",
+          "body": "",
+          "id": "the-screens-and-the-decisions",
+          "kind": "gallery"
+        },
+        {
+          "title": "Decision notes",
+          "body": "Looking back at the choices behind the experience.",
+          "id": "decision-notes",
+          "kind": "decisions"
+        },
+        {
+          "title": "Looking back — three trade-offs behind a simple flow",
+          "body": "**1. Immediate clarity versus access to less common actions.**\n\nFewer prominent controls can make the next step easier to recognize, but secondary actions still need a discoverable home. I would examine whether staff can complete the routine task quickly and recover when they need a less common option.\n\n**2. Guidance for a new user versus speed for a returning user.**\n\nAnimated onboarding can explain an unfamiliar interaction. In repeated work, the same instruction can become an interruption. I would keep the explanation dismissible, make help easy to revisit, and evaluate whether the guidance actually improves task completion.\n\n**3. A payment request versus a completed payment.**\n\nEntering the payment flow is different from receiving confirmation. I would agree with engineering and payment partners on the evidence required to mark an order paid, then design the pending, unsuccessful, and recovery states around that rule.\n\nThese are the questions I would bring to a review of the next iteration.",
+          "id": "looking-back-three-trade-offs-behind-a-simple-flow",
+          "kind": "text"
+        },
+        {
+          "title": "Questions for the next product review",
+          "body": "- A payment request, an attempted payment, and confirmed receipt need distinguishable states.\n- Canceling or changing an order raises permission and history questions.\n- Repeated taps or a delayed response need behavior that avoids accidental duplication.\n- Onboarding should remain dismissible and accessible again when needed.",
+          "id": "questions-for-the-next-product-review",
+          "kind": "text"
+        },
+        {
+          "title": "The contribution and the evidence",
+          "body": "My contribution combined workflow analysis, simpler primary actions, animated onboarding, and early dynamic QR integration. The screens make that design work visible.\n\nTo establish the size of the improvement, I would compare the same task across interface versions and observe completion, errors, hesitation, and assistance needed. A reduction in visible controls alone cannot establish a reduction in task time or support effort.",
+          "id": "the-contribution-and-the-evidence",
+          "kind": "text"
+        },
+        {
+          "title": "What I would measure next",
+          "body": "| Question | Measure I would define |\n| --- | --- |\n| Can a new merchant reach first value? | First successful order or payment within a defined onboarding window |\n| Does the interface help routine work? | Task completion, median task time, and assistance needed |\n| Is payment status understandable? | Correct interpretation of pending, confirmed, and unsuccessful states |\n| Is use sustained? | Continued transacting activity by a defined merchant cohort |\n\nI would also examine payment exceptions and support contacts. An easier first experience needs to remain dependable during repeated use.",
+          "id": "what-i-would-measure-next",
+          "kind": "text"
+        },
+        {
+          "title": "Personal reflection",
+          "body": "**A clear next action depends on a clear understanding of the work.**\n\nI enjoy merchant products because the details have an immediate purpose. The interface has to communicate what is happening and help someone continue. My strongest interest is the reasoning behind that apparent simplicity: understanding the flow, choosing the priority, and keeping the visible status consistent with the underlying behavior.",
+          "id": "personal-reflection",
+          "kind": "text"
+        }
+      ],
+      "line": "Make the next action obvious.",
+      "description": "Simplifying merchant workflows through clear primary actions, guided onboarding, and payment context.",
+      "focus": "Merchant operations · Business analysis · UX",
+      "decisions": [
+        {
+          "question": "How much should a merchant screen ask someone to consider at once?",
+          "options": "Show every operation as a primary control; emphasize the immediate task and reveal secondary actions in context; or provide different views for different operating responsibilities.",
+          "reasoning": "I would give the immediate task a strong visual priority while preserving a discoverable route to less common actions. A simplified screen still needs to identify the order, the amount, and the relevant status. Hiding necessary context would make the interface harder to trust.",
+          "check": "Observe the same task with new and returning users. Look at completion, wrong selections, hesitation, and the ability to recover after a mistake."
+        }
+      ],
+      "annotations": [
+        "The context: which table or order is selected?",
+        "Guidance should be useful, and easy to leave.",
+        "A payment method needs a clear status."
+      ],
+      "gallery": [
+        {
+          "src": "/images/projects/mseller-screen-01.webp",
+          "width": 263,
+          "height": 568,
+          "caption": "Merchant workspace: tables and orders",
+          "alt": "mSeller: Merchant workspace: tables and orders",
+          "sourceProject": "mSeller",
+          "kind": "Original app screen",
+          "annotation": "The context: which table or order is selected?"
+        },
+        {
+          "src": "/images/projects/mseller-screen-02.webp",
+          "width": 263,
+          "height": 568,
+          "caption": "Starting a working shift",
+          "alt": "mSeller: Starting a working shift",
+          "sourceProject": "mSeller",
+          "kind": "Original app screen",
+          "annotation": "Guidance should be useful, and easy to leave."
+        },
+        {
+          "src": "/images/projects/mseller-screen-03.webp",
+          "width": 263,
+          "height": 680,
+          "caption": "Choosing a payment method",
+          "alt": "mSeller: Choosing a payment method",
+          "sourceProject": "mSeller",
+          "kind": "Original app screen",
+          "annotation": "A payment method needs a clear status."
+        },
+        {
+          "src": "/images/projects/mseller-screen-04.webp",
+          "width": 263,
+          "height": 568,
+          "caption": "NFC payment step",
+          "alt": "mSeller: NFC payment step",
+          "sourceProject": "mSeller",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/mseller-screen-05.webp",
+          "width": 263,
+          "height": 700,
+          "caption": "Order details and actions",
+          "alt": "mSeller: Order details and actions",
+          "sourceProject": "mSeller",
+          "kind": "Original app screen",
+          "annotation": ""
+        }
+      ],
+      "original": {
+        "src": "/images/projects/mseller-original-board.webp",
+        "width": 2048,
+        "height": 791,
+        "caption": "Complete supplied screen board",
+        "kind": "Original screen board",
+        "sourceProject": "mSeller",
+        "alt": "Complete mSeller app screen board",
+        "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+      },
+      "detail": {
+        "src": "/images/projects/mseller-detail.webp",
+        "width": 263,
+        "height": 680
+      }
+    },
+    {
+      "slug": "beerich",
+      "number": "03",
+      "name": "BeeRich",
+      "eyebrow": "03 / PERSONAL FINANCE",
+      "title": "Help the next financial decision make sense.",
+      "deck": "A financial overview should help someone understand their position and see a useful next step. My contribution connected personal finance with banking services and championed a unified dashboard.",
+      "fields": [
+        [
+          "Product",
+          "BeeRich"
+        ],
+        [
+          "Project role",
+          "Product Owner & Analyst"
+        ],
+        [
+          "Context",
+          "Mobile wealth and personal finance"
+        ],
+        [
+          "Contribution",
+          "Personal finance integration with banking services; unified dashboard direction"
+        ],
+        [
+          "Experience focus",
+          "Savings, spending visibility, and investment information"
+        ]
+      ],
+      "sections": [
+        {
+          "title": "Domain context",
+          "body": "Personal finance brings several kinds of information into one experience. Spending describes what has happened. Savings relates to an intention or a commitment. Investment information introduces another set of expectations about value and availability. Bringing those views together is useful only if their meaning remains clear.\n\nThe product question that interests me is how an overview can help someone orient themselves before taking an action. I would start with the decision the person is trying to make and work backward to the information required. That changes the conversation from “How many features fit on the dashboard?” to “What deserves attention first?”",
+          "id": "domain-context",
+          "kind": "text"
+        },
+        {
+          "title": "The product question",
+          "body": "**How do you bring financial information together without making the overview harder to understand?**\n\nPersonal finance involves several related questions: what someone has, where money goes, how saving is progressing, and what financial action might be relevant. An app can display each answer separately while leaving the user to connect them.\n\nThe opportunity was to make the relationship between those views easier to understand within a connected banking experience.",
+          "id": "the-product-question",
+          "kind": "text"
+        },
+        {
+          "title": "What I contributed",
+          "body": "As Product Owner and Analyst, I worked on integrating personal finance management with banking services. I championed a unified dashboard to organize the experience and reduce unnecessary cognitive effort.\n\nMy contribution focused on product definition and the connection between financial information and available actions. The savings, spending, and investment views illustrate that direction.",
+          "id": "what-i-contributed",
+          "kind": "text"
+        },
+        {
+          "title": "The experience direction",
+          "body": "A unified overview can provide a useful starting point when its hierarchy is clear. Savings progress, spending information, and investment content each need a purpose in that first view.\n\nThe design question is what someone should understand first and how the experience helps them move into detail. A dashboard becomes more useful when it gives the information a relationship to an actual decision.",
+          "id": "the-experience-direction",
+          "kind": "text"
+        },
+        {
+          "title": "The screens and the decisions",
+          "body": "",
+          "id": "the-screens-and-the-decisions",
+          "kind": "gallery"
+        },
+        {
+          "title": "Decision notes",
+          "body": "Looking back at the choices behind the experience.",
+          "id": "decision-notes",
+          "kind": "decisions"
+        },
+        {
+          "title": "Looking back — three decisions worth evaluating",
+          "body": "**1. Begin with a recurring decision.**\n\nI would identify a specific question the overview should help answer, then choose the information needed for it. That keeps the hierarchy grounded in a user task rather than a list of available banking products.\n\n**2. Make the meaning of each figure clear.**\n\nAn available balance, a historical spending total, and an investment valuation have different meanings. I would check whether users understand those differences, including the relevant time period and whether a figure may be delayed.\n\n**3. Keep the next action relevant.**\n\nA promotional card can attract attention, but its usefulness depends on the surrounding context. I would evaluate whether people understand why an action is relevant before treating its click rate as a success.\n\nThese questions describe how I would evaluate the next iteration.",
+          "id": "looking-back-three-decisions-worth-evaluating",
+          "kind": "text"
+        },
+        {
+          "title": "The main trade-off",
+          "body": "**Breadth of information versus depth of understanding.**\n\nPutting more information in the overview offers convenience, but it also increases reading effort. A more focused overview needs a clear route to the details that some users require.\n\nI would test whether people can identify and explain the information needed for a realistic task. That would give the team a stronger basis for choosing the hierarchy than visual preference alone.",
+          "id": "the-main-trade-off",
+          "kind": "text"
+        },
+        {
+          "title": "Questions for the next product review",
+          "body": "- How does the interface distinguish available funds from an investment valuation?\n- How is a missing or delayed data source explained?\n- Can someone find the period behind a spending summary?\n- Does an action communicate its conditions before asking for commitment?",
+          "id": "questions-for-the-next-product-review",
+          "kind": "text"
+        },
+        {
+          "title": "The contribution and the evidence",
+          "body": "My contribution covered personal-finance integration and the unified-dashboard direction. The screens illustrate the experience.\n\nTo connect that work to a business outcome, I would define the eligible users, the financial action that represents activation, and the period over which continued use is evaluated. Product reach and personal contribution should remain distinguishable.",
+          "id": "the-contribution-and-the-evidence",
+          "kind": "text"
+        },
+        {
+          "title": "What I would measure next",
+          "body": "| Question | Measure I would define |\n| --- | --- |\n| Do people understand the overview? | Correctly interpreting the relevant figures in a realistic task |\n| Do they reach meaningful value? | A defined first financial action by eligible new users |\n| Does the product remain useful? | Meaningful return activity in a consistent cohort window |\n| Does engagement translate into financial behavior? | Repeat contributions or funded actions, separate from views and clicks |\n\nI would assess comprehension and task completion before interpreting engagement as evidence of financial clarity.",
+          "id": "what-i-would-measure-next",
+          "kind": "text"
+        },
+        {
+          "title": "Personal reflection",
+          "body": "**A dashboard earns its place by helping someone understand.**\n\nWhat I find interesting about financial UX is that clarity requires both information design and respect for the meaning of the data. My contribution to BeeRich connected personal finance with banking services and championed a unified dashboard. Looking back, I would judge that direction by the quality of the understanding it creates, alongside the actions it enables.",
+          "id": "personal-reflection",
+          "kind": "text"
+        }
+      ],
+      "line": "Help financial information become useful.",
+      "description": "Connecting personal finance with banking services through a unified dashboard and a clearer information hierarchy.",
+      "focus": "Personal finance · Product ownership",
+      "decisions": [
+        {
+          "question": "What should a unified financial overview prioritize?",
+          "options": "Give savings, spending, and investment equal prominence; lead with a smaller set of useful summaries; or personalize the hierarchy using information the product can responsibly interpret.",
+          "reasoning": "I would begin with a clear shared hierarchy and an understandable route into detail. Personalization becomes useful when the underlying data and intent are reliable enough to support it. The overview should help someone interpret their position without implying that every displayed amount is equally available to spend.",
+          "check": "Ask people to explain the main figures in their own words and complete a realistic task. Watch for confusion about time period, amount type, and the effect of the next action."
+        }
+      ],
+      "annotations": [
+        "The overview: what deserves attention first?",
+        "An investment valuation is different from available funds.",
+        "A projection should make its assumptions understandable."
+      ],
+      "gallery": [
+        {
+          "src": "/images/projects/beerich-screen-01.webp",
+          "width": 269,
+          "height": 582,
+          "caption": "Present financial overview",
+          "alt": "BeeRich: Present financial overview (identifying details masked)",
+          "sourceProject": "BeeRich",
+          "kind": "Original app screen",
+          "annotation": "The overview: what deserves attention first?"
+        },
+        {
+          "src": "/images/projects/beerich-screen-02.webp",
+          "width": 268,
+          "height": 582,
+          "caption": "Investment allocation",
+          "alt": "BeeRich: Investment allocation (identifying details masked)",
+          "sourceProject": "BeeRich",
+          "kind": "Original app screen",
+          "annotation": "An investment valuation is different from available funds."
+        },
+        {
+          "src": "/images/projects/beerich-screen-03.webp",
+          "width": 269,
+          "height": 582,
+          "caption": "Five-year future view",
+          "alt": "BeeRich: Five-year future view (identifying details masked)",
+          "sourceProject": "BeeRich",
+          "kind": "Original app screen",
+          "annotation": "A projection should make its assumptions understandable."
+        },
+        {
+          "src": "/images/projects/beerich-screen-04.webp",
+          "width": 269,
+          "height": 582,
+          "caption": "Financial opportunities",
+          "alt": "BeeRich: Financial opportunities (identifying details masked)",
+          "sourceProject": "BeeRich",
+          "kind": "Original app screen",
+          "annotation": ""
+        }
+      ],
+      "original": {
+        "src": "/images/projects/beerich-original-board.webp",
+        "width": 2047,
+        "height": 689,
+        "caption": "Complete supplied screen board",
+        "kind": "Original screen board · identifying details masked",
+        "sourceProject": "BeeRich",
+        "alt": "Complete BeeRich app screen board, with identifying details masked",
+        "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+      },
+      "detail": {
+        "src": "/images/projects/beerich-detail.webp",
+        "width": 268,
+        "height": 286
+      }
+    },
+    {
+      "slug": "moodify",
+      "number": "04",
+      "name": "Moodify",
+      "eyebrow": "04 / DIGITAL WELLBEING",
+      "title": "Make room for a calmer first step.",
+      "line": "Make room for a calmer first step.",
+      "description": "An experience design study connecting a gentle introduction, meditation content, practitioner discovery, and a personal wellbeing overview.",
+      "focus": "Digital wellbeing · Experience design study",
+      "deck": "Moodify explores how a wellbeing experience can bring together a gentle introduction, self-guided meditation, practitioner discovery, and a personal overview. The product question is how to offer a useful direction while leaving the person in control of what comes next.",
+      "fields": [
+        [
+          "Domain",
+          "Digital wellbeing"
+        ],
+        [
+          "Case focus",
+          "Product thinking, user journeys, and interface design"
+        ],
+        [
+          "Experience shown",
+          "Onboarding, meditation discovery, practitioner profile, and dashboard"
+        ],
+        [
+          "Presentation",
+          "Experience design study"
+        ]
+      ],
+      "annotations": [
+        "A clear invitation leaves room to choose.",
+        "Trust depends on understanding who, what, and what happens next.",
+        "The overview should help someone choose one useful direction."
+      ],
+      "sections": [
+        {
+          "title": "Domain context",
+          "body": "A wellbeing product can become another source of decisions if its first experience is too demanding. The design challenge I want to explore is how to introduce useful possibilities without asking someone to explain everything about themselves before beginning.\n\nThe Moodify screens bring together several different intentions: finding a quiet activity, exploring content, considering a conversation, and returning to a personal overview. Those intentions need clear relationships. A welcoming visual style helps establish a tone, while the navigation has to explain what the person can actually do.",
+          "id": "domain-context",
+          "kind": "text"
+        },
+        {
+          "title": "The product question",
+          "body": "**How can a wellbeing app help someone choose a manageable next step without making the experience feel like a test?**\n\nMy starting point is a small, understandable choice. The person should be able to see the available direction, understand what it involves, and decide whether it suits the moment. That gives me a more concrete design question than trying to make every part of the experience feel universally calming.",
+          "id": "the-product-question",
+          "kind": "text"
+        },
+        {
+          "title": "The scope of this case",
+          "body": "This case focuses on the presented interface flow and the reasoning I would use to develop it further: how onboarding sets expectations, how content becomes discoverable, what a practitioner profile needs to explain, and how a dashboard can support a return visit.\n\nThe screens are the design material. The decision notes describe the product questions and evaluation choices I would bring to the next iteration.",
+          "id": "the-scope-of-this-case",
+          "kind": "text"
+        },
+        {
+          "title": "The experience journey",
+          "body": "**1. An invitation to enter**\n\nThe forest entrance and restrained brand treatment create a visual pause. I would keep that atmosphere while making the first action clear and immediate. Someone returning to the app should be able to reach useful content without repeatedly waiting through an introduction.\n\n**2. A short, optional introduction**\n\nThe three onboarding screens introduce emotional awareness, meditation, and connection through imagery. My next step would be to give each panel one clear promise and a specific action. Skip and back controls help preserve choice while the person is still learning what the app offers.\n\n**3. A useful personal overview**\n\nThe dashboard groups Relaxing, Connect, Sound, Learn, and Feelings. I would examine whether these labels help someone choose or leave them guessing about overlapping categories. A useful overview should make it easy to find one relevant activity and return to something familiar.\n\n**4. A route into self-guided content**\n\nThe meditation screen introduces categories and a Counting Breaths card. Before starting an activity, I would want the person to understand what it involves, how long it takes, and whether audio is required. Those details belong to the next content-design iteration; the current board does not establish a completed session experience.\n\n**5. A considered route to connection**\n\nThe profile view brings together personal information, services, reviews, and meeting/message actions. That makes trust and expectation-setting central to the flow. I would want a person to understand the practitioner’s role, relevant qualifications, language, availability, and the next step before sharing personal information or sending a request.",
+          "id": "the-experience-journey",
+          "kind": "journey"
+        },
+        {
+          "title": "The screens and the decisions",
+          "body": "",
+          "id": "the-screens-and-the-decisions",
+          "kind": "gallery"
+        },
+        {
+          "title": "Decision notes",
+          "body": "Questions I would bring to the next iteration.",
+          "id": "decision-notes",
+          "kind": "decisions"
+        },
+        {
+          "title": "Exceptions and boundaries",
+          "body": "I would make the next iteration explicit about the moments where an expectation could be broken: content that cannot load, an interrupted activity, an unavailable practitioner, or a meeting request that has not been accepted.\n\nA request needs its own status. A message needs a realistic response expectation. Personal reflection should have understandable choices about what is stored and who can see it. The experience should also be clear about the limits of the service it provides.\n\nThese are design questions for the next iteration. They are not claims that the current screens represent a clinical service or a completed support workflow.",
+          "id": "exceptions-and-boundaries",
+          "kind": "text"
+        },
+        {
+          "title": "What the work shows",
+          "body": "The presented screens establish an experience direction: a visual welcome, a short introduction, routes into self-guided content and connection, and a dashboard for returning to the product.\n\nThe next step would be to test whether those parts form an understandable journey. I would look for evidence that someone can choose a direction, explain what will happen next, and navigate back without assistance.",
+          "id": "what-the-work-shows",
+          "kind": "text"
+        },
+        {
+          "title": "What I would evaluate next",
+          "body": "| Learning question | Evidence I would seek |\n| --- | --- |\n| Is the beginning understandable? | Whether someone can explain the offer after the introduction and select a first action. |\n| Are the categories distinct? | Whether people choose the expected category for a realistic task and explain that choice. |\n| Does the content set expectations? | Whether someone can explain the activity, duration, and controls before starting. |\n| Does the profile answer trust questions? | What remains unclear before a person considers contacting the practitioner. |\n| Does the dashboard support a return visit? | Whether someone can find a previous activity and understand what the indicators represent. |\n\nI would combine task observation with open questions about comfort and clarity. Time spent and repeat visits may describe use; they do not establish an improvement in wellbeing.",
+          "id": "what-i-would-evaluate-next",
+          "kind": "text"
+        },
+        {
+          "title": "Personal reflection",
+          "body": "**Calm begins with giving someone room to choose.**\n\nMoodify is interesting to me because it changes the tone of the product question. In a merchant workflow, I might emphasize the next operational action. Here, I want the next step to feel understandable without becoming an obligation. The same attention to context and clarity applies, but the pacing and language need to respect a different kind of moment.",
+          "id": "personal-reflection",
+          "kind": "text"
+        }
+      ],
+      "decisions": [
+        {
+          "question": "How much introduction is enough?",
+          "options": "Mandatory multi-step onboarding; optional overview; direct exploration.",
+          "reasoning": "I would keep orientation short and allow exploration early. Guidance can appear again when it becomes relevant.",
+          "check": "Whether people understand the offer and can choose a first activity without help."
+        },
+        {
+          "question": "How should the dashboard organize choices?",
+          "options": "Content types; desired next action; personalized suggestions.",
+          "reasoning": "I would test plain, distinct labels before adding personalization. Each label should set an understandable expectation.",
+          "check": "Where people expect to find a particular activity, and why."
+        },
+        {
+          "question": "What makes a profile useful?",
+          "options": "Lead with imagery and ratings; lead with relevant service details; combine both with clear hierarchy.",
+          "reasoning": "I would prioritize the information needed to understand fit and the next action. Any credential or availability statement needs a dependable source.",
+          "check": "What people need to know before sending a message or requesting a meeting."
+        },
+        {
+          "question": "What should progress communicate?",
+          "options": "Time spent; completed activities; personal reflection.",
+          "reasoning": "I would separate activity from wellbeing. A percentage of tasks completed should not imply a percentage of mental health achieved.",
+          "check": "How people interpret the dashboard indicators and whether any wording creates unnecessary pressure."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "/images/projects/moodify-screen-01.webp",
+          "width": 221,
+          "height": 478,
+          "caption": "Brand introduction",
+          "alt": "Moodify: Brand introduction",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/moodify-screen-02.webp",
+          "width": 221,
+          "height": 478,
+          "caption": "Forest entrance",
+          "alt": "Moodify: Forest entrance",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/moodify-screen-03.webp",
+          "width": 221,
+          "height": 478,
+          "caption": "Onboarding: emotional awareness",
+          "alt": "Moodify: Onboarding: emotional awareness",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": "A clear invitation leaves room to choose."
+        },
+        {
+          "src": "/images/projects/moodify-screen-04.webp",
+          "width": 221,
+          "height": 478,
+          "caption": "Onboarding: meditation",
+          "alt": "Moodify: Onboarding: meditation",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/moodify-screen-05.webp",
+          "width": 221,
+          "height": 478,
+          "caption": "Onboarding: connection",
+          "alt": "Moodify: Onboarding: connection",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/moodify-screen-06.webp",
+          "width": 220,
+          "height": 478,
+          "caption": "Meditation discovery",
+          "alt": "Moodify: Meditation discovery",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": ""
+        },
+        {
+          "src": "/images/projects/moodify-screen-07.webp",
+          "width": 221,
+          "height": 556,
+          "caption": "Example practitioner interface · sample profile content",
+          "alt": "Moodify: Example practitioner interface · sample profile content",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": "Trust depends on understanding who, what, and what happens next."
+        },
+        {
+          "src": "/images/projects/moodify-screen-08.webp",
+          "width": 221,
+          "height": 478,
+          "caption": "Personal overview · sample activity indicators",
+          "alt": "Moodify: Personal overview · sample activity indicators",
+          "sourceProject": "Moodify",
+          "kind": "Original app screen",
+          "annotation": "The overview should help someone choose one useful direction."
+        }
+      ],
+      "original": {
+        "src": "/images/projects/moodify-original-board.webp",
+        "width": 2047,
+        "height": 605,
+        "caption": "Complete supplied screen board",
+        "kind": "Original screen board",
+        "sourceProject": "Moodify",
+        "alt": "Complete Moodify app screen board",
+        "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+      },
+      "detail": {
+        "src": "/images/projects/moodify-detail.webp",
+        "width": 221,
+        "height": 478
+      }
+    }
+  ],
+  "domains": [
+    {
+      "title": "Personal finance — making information actionable",
+      "text": "A balance, a spending total, and an investment valuation can look similar on a dashboard while answering different questions. My interest is in helping someone understand what a figure means, which period it describes, and what decision it can support. BeeRich explores that relationship between financial information and a useful next step.",
+      "question": "What can someone understand or decide after seeing this?",
+      "name": "BeeRich",
+      "slug": "beerich"
+    },
+    {
+      "title": "Merchant operations — designing around the moment",
+      "text": "Merchant software sits inside work that is already happening: a table changes status, an order needs attention, or a payment is waiting for confirmation. I look at what the person needs to know at that moment and which action should be easiest to find. mSeller brings workflow analysis and interface hierarchy into the same conversation.",
+      "question": "What should be obvious when attention is limited?",
+      "name": "mSeller",
+      "slug": "mseller"
+    },
+    {
+      "title": "Debt and payment records — making change traceable",
+      "text": "A remaining balance is the result of events. Understanding those events matters when a payment is partial, repeated, unmatched, or corrected. Debt Ledger is where my interest in journey mapping meets business-rule thinking: the visible amount should have an explanation that the product can consistently support.",
+      "question": "Can we explain why the record changed?",
+      "name": "Debt Ledger",
+      "slug": "debt-ledger"
+    },
+    {
+      "title": "Digital wellbeing — making the first step approachable",
+      "text": "A wellbeing experience asks someone to give attention to themselves. I want that beginning to feel understandable and voluntary. Moodify explores how introductory guidance, self-guided content, and the option to connect with another person might sit together without making the experience feel demanding.",
+      "question": "How can the experience offer direction while preserving choice?",
+      "name": "Moodify",
+      "slug": "moodify"
+    }
+  ],
+  "steps": [
+    {
+      "number": "01",
+      "title": "Understand the moment",
+      "description": "Identify the task, the context, and what is difficult about the current experience.",
+      "question": "In mSeller, what does the staff member need to do while serving an order?"
+    },
+    {
+      "number": "02",
+      "title": "Name the decision",
+      "description": "Make clear what the user and the business need to decide.",
+      "question": "In BeeRich, which financial question should the overview help answer first?"
+    },
+    {
+      "number": "03",
+      "title": "Make the rules visible",
+      "description": "Connect the screen to the conditions and events that govern its behavior.",
+      "question": "In Debt Ledger, what evidence allows a payment to change the balance?"
+    },
+    {
+      "number": "04",
+      "title": "Compare the alternatives",
+      "description": "Explore more than one direction and explain the cost of each choice.",
+      "question": "In Moodify, how much onboarding is useful before someone can explore?"
+    },
+    {
+      "number": "05",
+      "title": "Design for the exception",
+      "description": "Include uncertainty, interruption, and recovery in the experience.",
+      "question": "What should happen when a request is sent but confirmation is still pending?"
+    },
+    {
+      "number": "06",
+      "title": "Define what to learn",
+      "description": "Choose evidence that can test whether the experience is useful.",
+      "question": "Can someone complete the task and explain what happened without assistance?"
+    }
+  ],
+  "personal": "I like moving between the larger product question and the small interaction that makes it real. This portfolio brings together selected work and reflections on those decisions.",
+  "about": {
+    "Opening": "I work across business analysis, product ownership, and UX. What connects those disciplines for me is the effort to make a complex situation understandable: what someone is trying to do, what the business needs, and how the product should behave.\n\nFinancial and merchant products have made that relationship especially interesting to me. A balance needs an explanation. A payment needs a trustworthy status. A busy workflow needs a clear next action. Moodify extends that curiosity into a different setting: how a wellbeing experience can make the first step feel manageable.\n\nI like moving between the larger product question and the small interaction that makes it real. This portfolio brings together selected work and reflections on those decisions.",
+    "How I approach the work": "I start by making the question concrete. I map the journey, identify the business rules, and look for the points where different interpretations could lead to different behavior. I use flows and prototypes to make those decisions easier to discuss. When there is uncertainty, I want it visible enough that the team can choose what to investigate next.",
+    "The experience behind that perspective": "Selected contributions across financial and merchant products.\n\n**Debt Ledger — Discovery to delivery**\n\nI owned the work from discovery through delivery, mapping user journeys and translating them into business logic. The product shipped in two months across four sprints.\n\n**mSeller — Business analysis and UX**\n\nAs Lead Business Analyst and UI/UX Designer, I simplified primary actions, developed animated onboarding, and worked on early dynamic QR integration for merchant workflows.\n\n**BeeRich — Product ownership and analysis**\n\nAs Product Owner and Analyst, I worked on the connection between personal finance management and banking services and championed a unified dashboard.\n\n**Moodify — Experience design study**\n\nAn exploration of onboarding, content discovery, practitioner profiles, and a personal wellbeing overview.",
+    "Tools and education": "Tools: **Figma · Webflow · Make.com**\n\nEducation: **MBA, Foreign Trade University**"
+  }
+}
