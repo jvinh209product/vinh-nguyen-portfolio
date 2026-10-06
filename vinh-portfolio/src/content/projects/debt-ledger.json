@@ -1,0 +1,191 @@
+{
+  "slug": "debt-ledger",
+  "number": "01",
+  "name": "Debt Ledger",
+  "eyebrow": "01 / AUTOMATED DEBT TRACKING",
+  "title": "Make the balance explainable.",
+  "deck": "A debt-tracking product needs a clear relationship between what the user sees and what the system records. My work connected the journey, the business logic, and the path to release.",
+  "fields": [
+    [
+      "Product",
+      "Debt Ledger"
+    ],
+    [
+      "Contribution",
+      "Discovery-to-delivery ownership"
+    ],
+    [
+      "Focus",
+      "User journeys, business logic, delivery alignment"
+    ],
+    [
+      "Delivery milestone",
+      "Shipped in two months across four sprints"
+    ],
+    [
+      "Product experience shown",
+      "Debt accounts, payment history, QR payment request"
+    ]
+  ],
+  "sections": [
+    {
+      "title": "Domain context",
+      "body": "Debt tracking connects a relationship with a record: who owes an amount, what has been paid, and what remains. That record needs to stay understandable when events do not arrive in a neat sequence. A partial payment, a repeated notification, or a later correction can change what the product needs to explain.\n\nMy work on Debt Ledger covered discovery through delivery, mapping user journeys into business logic and helping resolve cross-functional bottlenecks. The product shipped in two months across four sprints. The part of that work I want to make visible is how a journey becomes precise enough for different people to discuss the same behavior.",
+      "id": "domain-context",
+      "kind": "text"
+    },
+    {
+      "title": "The product question",
+      "body": "**How do you make debt tracking clear enough to use and precise enough to implement?**\n\nA debt balance represents several events: an amount owed, a payment, and sometimes a correction. The useful experience connects those events so someone can understand the remaining amount and see the records behind it.\n\nThe challenge was to translate that workflow into an automated debt-tracking product within a short delivery window. A polished overview alone would not resolve the underlying questions about how the workflow should behave.",
+      "id": "the-product-question",
+      "kind": "text"
+    },
+    {
+      "title": "What I owned",
+      "body": "I owned the discovery-to-delivery lifecycle. I mapped user journeys and translated them into business logic, helping resolve cross-functional bottlenecks and maintain alignment through delivery.\n\nMy contribution was the connection between the user's task and the behavior the team needed to implement. The product shipped in two months across four sprints.",
+      "id": "what-i-owned",
+      "kind": "text"
+    },
+    {
+      "title": "From the journey to the rules",
+      "body": "The product views connect debt accounts, transaction history, and a QR payment request. They represent connected parts of the workflow:\n\n1. Understand what is owed.\n2. Inspect the records associated with the balance.\n3. Request or record a payment.\n4. Understand the resulting status and remaining amount.\n\nMapping that relationship matters because every visible action implies a business rule. A payment action needs a definition of when the payment is recognized. A history view needs to explain the event. A balance needs to remain consistent with the records that support it.\n\nThis is the kind of detail I want to make explicit when moving from discovery into implementation.",
+      "id": "from-the-journey-to-the-rules",
+      "kind": "text"
+    },
+    {
+      "title": "The screens and the decisions",
+      "body": "",
+      "id": "the-screens-and-the-decisions",
+      "kind": "gallery"
+    },
+    {
+      "title": "Decision notes",
+      "body": "Looking back at the choices behind the experience.",
+      "id": "decision-notes",
+      "kind": "decisions"
+    },
+    {
+      "title": "Looking back — the decisions I would make explicit",
+      "body": "**1. Define what is allowed to change the balance.**\n\nA useful starting point is to separate a payment request from a confirmed payment. A QR code can provide payment context; it cannot, by itself, establish that money arrived. I would define the confirmation source and the rules for applying a payment with the technical and business owners.\n\n**2. Give exceptions a visible route.**\n\nPartial payments, repeated notifications, unmatched payments, and reversals raise different questions. I would specify the expected behavior for each before treating automation as complete. Where a payment cannot be matched confidently, a visible review state gives the team a way to resolve uncertainty.\n\n**3. Preserve an explanation when something changes.**\n\nIf a recorded payment is corrected or reversed, I would preserve a traceable relationship to the original event. The user should be able to understand the new balance without losing the history that explains it.\n\nThese are retrospective design and analysis principles. They describe how I would make the product more explicit; they are not a claim that every example below shipped in the initial release.",
+      "id": "looking-back-the-decisions-i-would-make-explicit",
+      "kind": "text"
+    },
+    {
+      "title": "A small illustration of the thinking",
+      "body": "Start with VND 1,000,000 owed. Select each event to see how the balance and review queue relate.\n\nThis illustrates the reasoning. It is not a description of every rule shipped in the original release.",
+      "id": "a-small-illustration-of-the-thinking",
+      "kind": "ledger"
+    },
+    {
+      "title": "The delivery result",
+      "body": "The product shipped in two months across four sprints. My work covered discovery, journey mapping, business logic, and delivery alignment.\n\nThat milestone demonstrates delivery. To judge the product's continuing value, I would look separately at adoption, reconciliation effort, and the reliability of the resulting records.",
+      "id": "the-delivery-result",
+      "kind": "text"
+    },
+    {
+      "title": "What I would measure next",
+      "body": "| Question | Measure I would define |\n| --- | --- |\n| Does it reduce operating effort? | Time needed to reconcile a comparable workload |\n| Is the automation useful? | Correctly matched eligible payments, with incorrect matches tracked separately |\n| Can users trust the record? | Balance corrections and unresolved exceptions per defined transaction volume |\n| Does it become part of routine work? | Continued meaningful ledger use by a defined merchant cohort |\n\nI would inspect the most frequent exceptions before adding more features. If people spend their time correcting or explaining a balance, that is a concrete place to investigate.",
+      "id": "what-i-would-measure-next",
+      "kind": "text"
+    },
+    {
+      "title": "Personal reflection",
+      "body": "**Every number should have a story the system can explain.**\n\nFor me, this is where business analysis becomes tangible. The balance, the history, and the available action need to describe the same situation. Making that relationship explicit gives the team a better basis for implementation and gives the user a clearer record to work with.",
+      "id": "personal-reflection",
+      "kind": "text"
+    }
+  ],
+  "line": "Make the balance explainable.",
+  "description": "Connecting debt-tracking journeys with business logic and delivery, with a release shipped in two months across four sprints.",
+  "focus": "Business analysis · Product delivery",
+  "decisions": [
+    {
+      "question": "What should be allowed to change the outstanding balance?",
+      "options": "Treat a payment request as sufficient; rely on a person to confirm every change; or define a trusted confirmation event and send uncertain cases to review.",
+      "reasoning": "I would separate the request from the evidence that payment occurred. I would also give repeated events and corrections explicit rules, so the same payment cannot silently change the balance twice and a correction retains an explanation.",
+      "check": "Walk through complete examples with business and technical colleagues. For each event, compare the balance, the history, and the action available to the user. Then evaluate real reconciliation effort and exception patterns after release."
+    }
+  ],
+  "annotations": [
+    "The balance needs an explanation.",
+    "The history should make every change traceable.",
+    "A payment request is different from confirmation."
+  ],
+  "gallery": [
+    {
+      "src": "/images/projects/debt-ledger-screen-01.webp",
+      "width": 235,
+      "height": 564,
+      "caption": "Balance overview and account list",
+      "alt": "Debt Ledger: Balance overview and account list (identifying details masked)",
+      "sourceProject": "Debt Ledger",
+      "kind": "Original app screen",
+      "annotation": "The balance needs an explanation."
+    },
+    {
+      "src": "/images/projects/debt-ledger-screen-02.webp",
+      "width": 235,
+      "height": 509,
+      "caption": "Debt detail and payment history",
+      "alt": "Debt Ledger: Debt detail and payment history (identifying details masked)",
+      "sourceProject": "Debt Ledger",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/debt-ledger-screen-03.webp",
+      "width": 235,
+      "height": 689,
+      "caption": "Notification history",
+      "alt": "Debt Ledger: Notification history (identifying details masked)",
+      "sourceProject": "Debt Ledger",
+      "kind": "Original app screen",
+      "annotation": "A payment request is different from confirmation."
+    },
+    {
+      "src": "/images/projects/debt-ledger-screen-04.webp",
+      "width": 235,
+      "height": 509,
+      "caption": "Before and after a correction",
+      "alt": "Debt Ledger: Before and after a correction (identifying details masked)",
+      "sourceProject": "Debt Ledger",
+      "kind": "Original app screen",
+      "annotation": "The history should make every change traceable."
+    },
+    {
+      "src": "/images/projects/debt-ledger-screen-05.webp",
+      "width": 235,
+      "height": 509,
+      "caption": "Payment request",
+      "alt": "Debt Ledger: Payment request (identifying details masked)",
+      "sourceProject": "Debt Ledger",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/debt-ledger-screen-06.webp",
+      "width": 235,
+      "height": 509,
+      "caption": "Payment confirmation",
+      "alt": "Debt Ledger: Payment confirmation (identifying details masked)",
+      "sourceProject": "Debt Ledger",
+      "kind": "Original app screen",
+      "annotation": ""
+    }
+  ],
+  "original": {
+    "src": "/images/projects/debt-ledger-original-board.webp",
+    "width": 2048,
+    "height": 768,
+    "caption": "Complete supplied screen board",
+    "kind": "Original screen board · identifying details masked",
+    "sourceProject": "Debt Ledger",
+    "alt": "Complete Debt Ledger app screen board, with identifying details masked",
+    "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+  },
+  "detail": {
+    "src": "/images/projects/debt-ledger-detail.webp",
+    "width": 208,
+    "height": 190
+  }
+}

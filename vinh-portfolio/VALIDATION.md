@@ -1,55 +1,50 @@
-# Export validation
+# Validation — 6 October 2026
 
-Validated on 5 October 2026 against the source of published portfolio version 4, commit `b1963b5c0b843299b1c43dee4cace4b443ee7d03`.
+## Build and integrity
 
-## Source and asset preservation
+- Dependency installation, TypeScript and full Vite client/SSR/prerender build pass on Node 24.19.0 / npm 11.9.0. The complete ZIP was extracted separately; clean `npm ci` and `npm run build` also pass from that packaged source.
+- Seven complete static outputs are generated: six pages plus not-found. The temporary SSR directory is removed after building.
+- `public.json` is identical to the export. Generated case data equals each original project: Debt Ledger 11 sections, mSeller 11, BeeRich 12, Moodify 10; 44 total.
+- All 49 original public assets (48 raster images and favicon) are byte-for-byte identical.
+- All 109 local asset/route references across built HTML exist, including responsive candidates. No duplicate PNG image preload is generated.
+- Deployable source requires no Sites runtime, authentication, storage bindings, secrets or application server.
 
-- All 49 original public assets match the published source byte for byte: 48 images and the favicon SVG. All 48 raster images were opened and decoded successfully.
-- The 18 retained original source files match byte for byte, including the complete portfolio component, content JSON, stylesheet, GSAP code, loading logic, debt example, required UI primitives, utility code, and vendor styles/license.
-- No case-study text was rewritten or shortened. The four case studies retain 44 story sections in total.
-- No generated or substitute images were introduced. The eight current image assignments were verified separately in the browser:
+## Production browser checks
 
-| Project | Homepage asset | Detail hero asset |
+| Check | Result |
+| --- | --- |
+| Homepage and About direct access/refresh | Pass |
+| Four case routes direct access/refresh | Pass |
+| Four homepage mappings | Individually verified in desktop stage |
+| Four detail mappings | Individually verified in corresponding pages |
+| Desktop media viewport | All four 523.89 × 392.91 px at tested width |
+| Mobile media viewport | All four 283 × 212.25 px in 390 px frame |
+| Tablet media viewport | All four 278.5 × 208.88 px in 768 px frame |
+| Mobile routes | All six checked at 360 px; no document overflow or missing visible images |
+| Tablet | Home, About and Moodify checked at 768 px |
+| Desktop | About 1363 px browser width; no document overflow |
+| Mobile menu | Opens, follows Work link and closes |
+| Smooth anchors | Work/Back to top checked; hash and target focus preserved |
+| Reduced motion | Disables Lenis/WebGL; System restores full layout |
+| Case gallery | Enlarge, zoom, close and nested native-scroll exclusion work |
+| Loader | Critical readiness completes independently of 3D/case chunks |
+| Final console | No new application errors or ScrollTrigger warnings observed |
+
+Browser-extension metadata errors are unrelated to the app. An earlier development build attempted unsupported WebGL and logged renderer errors; the final capability gate keeps static content and avoids downloading/invoking Three on this browser.
+
+## Correct asset mapping
+
+| Project | Homepage fallback | Detail fallback |
 | --- | --- | --- |
 | Debt Ledger | `01-home-debtledger.png` | `01-detail-debtledger.png` |
 | mSeller | `02-home-mseller.png` | `02-detail-mseller.png` |
 | BeeRich | `03-home-beerich.png` | `03-detail-beerich.png` |
 | Moodify | `04-home-moodify.png` | `04-detail-moodify.png` |
 
-These are the filenames actually used by the current published version. Images remain centered with `object-fit: contain`. The original image containers, backgrounds, labels, and captions are preserved.
+Responsive candidates derive from exactly these sources. Screenshots, boards and SVG/favicon remain local.
 
-## Installation and build
+## Remaining Preview gate
 
-| Check | Result |
-| --- | --- |
-| Initial `npm install` | Passed |
-| Clean `npm ci` using the included lockfile | Passed |
-| `npm run dev` and loading the transformed entry module | Passed |
-| `npm run build` after clean installation | Passed |
-| TypeScript validation / imports | Passed as part of the build |
-| Static HTML generation | Six normal pages plus `404.html` |
-| Local asset, internal route, and anchor references in generated HTML | No missing targets |
-| Platform runtime dependencies | No Sites, Vinext, D1, R2, authentication, or platform API dependency |
+No GitHub branch was pushed/merged and the live Vercel site was not changed. The GitHub plugin was installed during delivery, but repository operations were not exposed to this active session. Repository identity and a callable GitHub connection are still needed to create Preview.
 
-Validation used Node.js 24 and npm 11. The lockfile resolves packages from the public npm registry. Dependency versions are pinned. No private environment file or credential is included.
-
-## Browser checks
-
-The production output was opened in Chromium, with direct navigation to every case-study route and a direct refresh of a case-study page. The homepage, About page, and not-found page also rendered successfully.
-
-- Desktop viewport: 1363 × 936. The selected-work visual measured 581.109375 × 435.828125 CSS pixels and the detail hero measured 1195.375 × 672.390625, matching the existing version at that viewport.
-- All six pages were checked in 390-pixel mobile and 768-pixel tablet viewport frames. Their document scroll widths matched their client widths, with no horizontal page overflow. A 360-pixel viewport was also used to check navigation and the About page.
-- The mobile navigation opened and its About link navigated successfully.
-- GSAP initialized in full-motion mode. Scrolling switched the sticky selected-work image through Debt Ledger, mSeller, BeeRich, and Moodify; the header height changed to its existing 78-pixel scrolled state.
-- The marquee moved, and its pause/resume controls changed state correctly. Reduced-motion selection persisted across navigation and disabled marquee motion. Full motion could be restored.
-- Gallery notes expanded; the image viewer opened, enlarged the image, and closed with Escape.
-- The debt example applied a payment to produce VND 600,000 outstanding and kept that balance unchanged for a duplicate notification.
-- The loading overlay settled without blocking page content. Its original percentage progression, timing, cache/session behavior, and fallback logic are unchanged in source.
-
-## Scope
-
-The migration changed the build system and page bootstrap, replacing the hosted runtime with Vite browser assets and build-time static HTML. It did not change the live Site or its repository.
-
-Browser checks covered Chromium and representative desktop/mobile/tablet widths; they are not an exhaustive test of every browser or physical device. Native view-transition support and font rasterization remain browser/OS dependent. The rapid iframe navigation checks produced one browser-native aborted view-transition notification; subsequent pages and interactions loaded correctly.
-
-Vercel and Cloudflare Pages routing configurations follow their documented static HTML behavior. This export has not been deployed to an external hosting account, so domain, DNS, and provider-account deployment checks remain for the actual deployment. No access to ChatGPT Sites is required to install, build, or host this project.
+Before merging `upgrade/home-motion-3d`, use a GPU-enabled desktop and real phone to check 3D placement/materials, subtle input/scroll response, offscreen/hidden-tab pause, context-loss fallback, actual loading performance and touch scrolling. This environment cannot render WebGL or provide a meaningful GPU/Lighthouse benchmark.

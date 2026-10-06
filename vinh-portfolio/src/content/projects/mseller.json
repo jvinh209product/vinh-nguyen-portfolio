@@ -1,0 +1,181 @@
+{
+  "slug": "mseller",
+  "number": "02",
+  "name": "mSeller",
+  "eyebrow": "02 / MERCHANT OPERATIONS",
+  "title": "Make the next action obvious.",
+  "deck": "Merchant software needs to fit the work happening around it. My contribution combined business analysis and UI/UX design to simplify core actions and connect onboarding with the payment experience.",
+  "fields": [
+    [
+      "Product",
+      "mSeller"
+    ],
+    [
+      "Project role",
+      "Lead Business Analyst & UI/UX Designer"
+    ],
+    [
+      "Context",
+      "Merchant operations, illustrated through restaurant workflows"
+    ],
+    [
+      "Contribution",
+      "Interface simplification, guided onboarding, early dynamic QR integration"
+    ],
+    [
+      "Experience focus",
+      "Orders, tables, shifts, and payments"
+    ]
+  ],
+  "sections": [
+    {
+      "title": "Domain context",
+      "body": "Merchant operations connect several states that need to remain understandable: which table or order is active, what still needs attention, and whether payment is complete. The interface is one part of that operating context. Its hierarchy needs to support the person doing the work at the moment they need it.\n\nI am interested in the connection between a business process and the action the screen makes prominent. In mSeller, my business analysis and UI/UX work included simplifying core flows around one or two primary actions, guided onboarding, and early dynamic QR integration. The important question behind that simplification is whether the person still has enough context to choose correctly.",
+      "id": "domain-context",
+      "kind": "text"
+    },
+    {
+      "title": "The product question",
+      "body": "**How can software help staff move through a task without repeatedly making them interpret the interface?**\n\nThe presented workflows move between table status, orders, shift setup, and payment. Each moment has a different immediate purpose. An interface that gives everything the same visual priority makes that purpose harder to recognize.\n\nMy objective was to simplify the operating experience by making the relevant action easier to identify.",
+      "id": "the-product-question",
+      "kind": "text"
+    },
+    {
+      "title": "What I contributed",
+      "body": "As Lead Business Analyst and UI/UX Designer, I simplified the interface and organized core flows around one or two primary actions. I also worked on early dynamic QR integration and created custom animated onboarding to guide key interactions.\n\nThe action count describes visual priority. It is not a claim that every merchant task was completed in two taps.",
+      "id": "what-i-contributed",
+      "kind": "text"
+    },
+    {
+      "title": "The connection between workflow and interface",
+      "body": "A table overview supports a different decision from an order detail or payment screen. Business analysis helps establish what that decision is; interface hierarchy helps make it visible.\n\nFor me, this is the valuable connection between the two disciplines. A primary action should be the natural next step in a well-understood workflow. It should not have to compensate for an unclear process.",
+      "id": "the-connection-between-workflow-and-interface",
+      "kind": "text"
+    },
+    {
+      "title": "The screens and the decisions",
+      "body": "",
+      "id": "the-screens-and-the-decisions",
+      "kind": "gallery"
+    },
+    {
+      "title": "Decision notes",
+      "body": "Looking back at the choices behind the experience.",
+      "id": "decision-notes",
+      "kind": "decisions"
+    },
+    {
+      "title": "Looking back — three trade-offs behind a simple flow",
+      "body": "**1. Immediate clarity versus access to less common actions.**\n\nFewer prominent controls can make the next step easier to recognize, but secondary actions still need a discoverable home. I would examine whether staff can complete the routine task quickly and recover when they need a less common option.\n\n**2. Guidance for a new user versus speed for a returning user.**\n\nAnimated onboarding can explain an unfamiliar interaction. In repeated work, the same instruction can become an interruption. I would keep the explanation dismissible, make help easy to revisit, and evaluate whether the guidance actually improves task completion.\n\n**3. A payment request versus a completed payment.**\n\nEntering the payment flow is different from receiving confirmation. I would agree with engineering and payment partners on the evidence required to mark an order paid, then design the pending, unsuccessful, and recovery states around that rule.\n\nThese are the questions I would bring to a review of the next iteration.",
+      "id": "looking-back-three-trade-offs-behind-a-simple-flow",
+      "kind": "text"
+    },
+    {
+      "title": "Questions for the next product review",
+      "body": "- A payment request, an attempted payment, and confirmed receipt need distinguishable states.\n- Canceling or changing an order raises permission and history questions.\n- Repeated taps or a delayed response need behavior that avoids accidental duplication.\n- Onboarding should remain dismissible and accessible again when needed.",
+      "id": "questions-for-the-next-product-review",
+      "kind": "text"
+    },
+    {
+      "title": "The contribution and the evidence",
+      "body": "My contribution combined workflow analysis, simpler primary actions, animated onboarding, and early dynamic QR integration. The screens make that design work visible.\n\nTo establish the size of the improvement, I would compare the same task across interface versions and observe completion, errors, hesitation, and assistance needed. A reduction in visible controls alone cannot establish a reduction in task time or support effort.",
+      "id": "the-contribution-and-the-evidence",
+      "kind": "text"
+    },
+    {
+      "title": "What I would measure next",
+      "body": "| Question | Measure I would define |\n| --- | --- |\n| Can a new merchant reach first value? | First successful order or payment within a defined onboarding window |\n| Does the interface help routine work? | Task completion, median task time, and assistance needed |\n| Is payment status understandable? | Correct interpretation of pending, confirmed, and unsuccessful states |\n| Is use sustained? | Continued transacting activity by a defined merchant cohort |\n\nI would also examine payment exceptions and support contacts. An easier first experience needs to remain dependable during repeated use.",
+      "id": "what-i-would-measure-next",
+      "kind": "text"
+    },
+    {
+      "title": "Personal reflection",
+      "body": "**A clear next action depends on a clear understanding of the work.**\n\nI enjoy merchant products because the details have an immediate purpose. The interface has to communicate what is happening and help someone continue. My strongest interest is the reasoning behind that apparent simplicity: understanding the flow, choosing the priority, and keeping the visible status consistent with the underlying behavior.",
+      "id": "personal-reflection",
+      "kind": "text"
+    }
+  ],
+  "line": "Make the next action obvious.",
+  "description": "Simplifying merchant workflows through clear primary actions, guided onboarding, and payment context.",
+  "focus": "Merchant operations · Business analysis · UX",
+  "decisions": [
+    {
+      "question": "How much should a merchant screen ask someone to consider at once?",
+      "options": "Show every operation as a primary control; emphasize the immediate task and reveal secondary actions in context; or provide different views for different operating responsibilities.",
+      "reasoning": "I would give the immediate task a strong visual priority while preserving a discoverable route to less common actions. A simplified screen still needs to identify the order, the amount, and the relevant status. Hiding necessary context would make the interface harder to trust.",
+      "check": "Observe the same task with new and returning users. Look at completion, wrong selections, hesitation, and the ability to recover after a mistake."
+    }
+  ],
+  "annotations": [
+    "The context: which table or order is selected?",
+    "Guidance should be useful, and easy to leave.",
+    "A payment method needs a clear status."
+  ],
+  "gallery": [
+    {
+      "src": "/images/projects/mseller-screen-01.webp",
+      "width": 263,
+      "height": 568,
+      "caption": "Merchant workspace: tables and orders",
+      "alt": "mSeller: Merchant workspace: tables and orders",
+      "sourceProject": "mSeller",
+      "kind": "Original app screen",
+      "annotation": "The context: which table or order is selected?"
+    },
+    {
+      "src": "/images/projects/mseller-screen-02.webp",
+      "width": 263,
+      "height": 568,
+      "caption": "Starting a working shift",
+      "alt": "mSeller: Starting a working shift",
+      "sourceProject": "mSeller",
+      "kind": "Original app screen",
+      "annotation": "Guidance should be useful, and easy to leave."
+    },
+    {
+      "src": "/images/projects/mseller-screen-03.webp",
+      "width": 263,
+      "height": 680,
+      "caption": "Choosing a payment method",
+      "alt": "mSeller: Choosing a payment method",
+      "sourceProject": "mSeller",
+      "kind": "Original app screen",
+      "annotation": "A payment method needs a clear status."
+    },
+    {
+      "src": "/images/projects/mseller-screen-04.webp",
+      "width": 263,
+      "height": 568,
+      "caption": "NFC payment step",
+      "alt": "mSeller: NFC payment step",
+      "sourceProject": "mSeller",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/mseller-screen-05.webp",
+      "width": 263,
+      "height": 700,
+      "caption": "Order details and actions",
+      "alt": "mSeller: Order details and actions",
+      "sourceProject": "mSeller",
+      "kind": "Original app screen",
+      "annotation": ""
+    }
+  ],
+  "original": {
+    "src": "/images/projects/mseller-original-board.webp",
+    "width": 2048,
+    "height": 791,
+    "caption": "Complete supplied screen board",
+    "kind": "Original screen board",
+    "sourceProject": "mSeller",
+    "alt": "Complete mSeller app screen board",
+    "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+  },
+  "detail": {
+    "src": "/images/projects/mseller-detail.webp",
+    "width": 263,
+    "height": 680
+  }
+}

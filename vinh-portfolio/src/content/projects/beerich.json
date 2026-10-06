@@ -1,0 +1,177 @@
+{
+  "slug": "beerich",
+  "number": "03",
+  "name": "BeeRich",
+  "eyebrow": "03 / PERSONAL FINANCE",
+  "title": "Help the next financial decision make sense.",
+  "deck": "A financial overview should help someone understand their position and see a useful next step. My contribution connected personal finance with banking services and championed a unified dashboard.",
+  "fields": [
+    [
+      "Product",
+      "BeeRich"
+    ],
+    [
+      "Project role",
+      "Product Owner & Analyst"
+    ],
+    [
+      "Context",
+      "Mobile wealth and personal finance"
+    ],
+    [
+      "Contribution",
+      "Personal finance integration with banking services; unified dashboard direction"
+    ],
+    [
+      "Experience focus",
+      "Savings, spending visibility, and investment information"
+    ]
+  ],
+  "sections": [
+    {
+      "title": "Domain context",
+      "body": "Personal finance brings several kinds of information into one experience. Spending describes what has happened. Savings relates to an intention or a commitment. Investment information introduces another set of expectations about value and availability. Bringing those views together is useful only if their meaning remains clear.\n\nThe product question that interests me is how an overview can help someone orient themselves before taking an action. I would start with the decision the person is trying to make and work backward to the information required. That changes the conversation from “How many features fit on the dashboard?” to “What deserves attention first?”",
+      "id": "domain-context",
+      "kind": "text"
+    },
+    {
+      "title": "The product question",
+      "body": "**How do you bring financial information together without making the overview harder to understand?**\n\nPersonal finance involves several related questions: what someone has, where money goes, how saving is progressing, and what financial action might be relevant. An app can display each answer separately while leaving the user to connect them.\n\nThe opportunity was to make the relationship between those views easier to understand within a connected banking experience.",
+      "id": "the-product-question",
+      "kind": "text"
+    },
+    {
+      "title": "What I contributed",
+      "body": "As Product Owner and Analyst, I worked on integrating personal finance management with banking services. I championed a unified dashboard to organize the experience and reduce unnecessary cognitive effort.\n\nMy contribution focused on product definition and the connection between financial information and available actions. The savings, spending, and investment views illustrate that direction.",
+      "id": "what-i-contributed",
+      "kind": "text"
+    },
+    {
+      "title": "The experience direction",
+      "body": "A unified overview can provide a useful starting point when its hierarchy is clear. Savings progress, spending information, and investment content each need a purpose in that first view.\n\nThe design question is what someone should understand first and how the experience helps them move into detail. A dashboard becomes more useful when it gives the information a relationship to an actual decision.",
+      "id": "the-experience-direction",
+      "kind": "text"
+    },
+    {
+      "title": "The screens and the decisions",
+      "body": "",
+      "id": "the-screens-and-the-decisions",
+      "kind": "gallery"
+    },
+    {
+      "title": "Decision notes",
+      "body": "Looking back at the choices behind the experience.",
+      "id": "decision-notes",
+      "kind": "decisions"
+    },
+    {
+      "title": "Looking back — three decisions worth evaluating",
+      "body": "**1. Begin with a recurring decision.**\n\nI would identify a specific question the overview should help answer, then choose the information needed for it. That keeps the hierarchy grounded in a user task rather than a list of available banking products.\n\n**2. Make the meaning of each figure clear.**\n\nAn available balance, a historical spending total, and an investment valuation have different meanings. I would check whether users understand those differences, including the relevant time period and whether a figure may be delayed.\n\n**3. Keep the next action relevant.**\n\nA promotional card can attract attention, but its usefulness depends on the surrounding context. I would evaluate whether people understand why an action is relevant before treating its click rate as a success.\n\nThese questions describe how I would evaluate the next iteration.",
+      "id": "looking-back-three-decisions-worth-evaluating",
+      "kind": "text"
+    },
+    {
+      "title": "The main trade-off",
+      "body": "**Breadth of information versus depth of understanding.**\n\nPutting more information in the overview offers convenience, but it also increases reading effort. A more focused overview needs a clear route to the details that some users require.\n\nI would test whether people can identify and explain the information needed for a realistic task. That would give the team a stronger basis for choosing the hierarchy than visual preference alone.",
+      "id": "the-main-trade-off",
+      "kind": "text"
+    },
+    {
+      "title": "Questions for the next product review",
+      "body": "- How does the interface distinguish available funds from an investment valuation?\n- How is a missing or delayed data source explained?\n- Can someone find the period behind a spending summary?\n- Does an action communicate its conditions before asking for commitment?",
+      "id": "questions-for-the-next-product-review",
+      "kind": "text"
+    },
+    {
+      "title": "The contribution and the evidence",
+      "body": "My contribution covered personal-finance integration and the unified-dashboard direction. The screens illustrate the experience.\n\nTo connect that work to a business outcome, I would define the eligible users, the financial action that represents activation, and the period over which continued use is evaluated. Product reach and personal contribution should remain distinguishable.",
+      "id": "the-contribution-and-the-evidence",
+      "kind": "text"
+    },
+    {
+      "title": "What I would measure next",
+      "body": "| Question | Measure I would define |\n| --- | --- |\n| Do people understand the overview? | Correctly interpreting the relevant figures in a realistic task |\n| Do they reach meaningful value? | A defined first financial action by eligible new users |\n| Does the product remain useful? | Meaningful return activity in a consistent cohort window |\n| Does engagement translate into financial behavior? | Repeat contributions or funded actions, separate from views and clicks |\n\nI would assess comprehension and task completion before interpreting engagement as evidence of financial clarity.",
+      "id": "what-i-would-measure-next",
+      "kind": "text"
+    },
+    {
+      "title": "Personal reflection",
+      "body": "**A dashboard earns its place by helping someone understand.**\n\nWhat I find interesting about financial UX is that clarity requires both information design and respect for the meaning of the data. My contribution to BeeRich connected personal finance with banking services and championed a unified dashboard. Looking back, I would judge that direction by the quality of the understanding it creates, alongside the actions it enables.",
+      "id": "personal-reflection",
+      "kind": "text"
+    }
+  ],
+  "line": "Help financial information become useful.",
+  "description": "Connecting personal finance with banking services through a unified dashboard and a clearer information hierarchy.",
+  "focus": "Personal finance · Product ownership",
+  "decisions": [
+    {
+      "question": "What should a unified financial overview prioritize?",
+      "options": "Give savings, spending, and investment equal prominence; lead with a smaller set of useful summaries; or personalize the hierarchy using information the product can responsibly interpret.",
+      "reasoning": "I would begin with a clear shared hierarchy and an understandable route into detail. Personalization becomes useful when the underlying data and intent are reliable enough to support it. The overview should help someone interpret their position without implying that every displayed amount is equally available to spend.",
+      "check": "Ask people to explain the main figures in their own words and complete a realistic task. Watch for confusion about time period, amount type, and the effect of the next action."
+    }
+  ],
+  "annotations": [
+    "The overview: what deserves attention first?",
+    "An investment valuation is different from available funds.",
+    "A projection should make its assumptions understandable."
+  ],
+  "gallery": [
+    {
+      "src": "/images/projects/beerich-screen-01.webp",
+      "width": 269,
+      "height": 582,
+      "caption": "Present financial overview",
+      "alt": "BeeRich: Present financial overview (identifying details masked)",
+      "sourceProject": "BeeRich",
+      "kind": "Original app screen",
+      "annotation": "The overview: what deserves attention first?"
+    },
+    {
+      "src": "/images/projects/beerich-screen-02.webp",
+      "width": 268,
+      "height": 582,
+      "caption": "Investment allocation",
+      "alt": "BeeRich: Investment allocation (identifying details masked)",
+      "sourceProject": "BeeRich",
+      "kind": "Original app screen",
+      "annotation": "An investment valuation is different from available funds."
+    },
+    {
+      "src": "/images/projects/beerich-screen-03.webp",
+      "width": 269,
+      "height": 582,
+      "caption": "Five-year future view",
+      "alt": "BeeRich: Five-year future view (identifying details masked)",
+      "sourceProject": "BeeRich",
+      "kind": "Original app screen",
+      "annotation": "A projection should make its assumptions understandable."
+    },
+    {
+      "src": "/images/projects/beerich-screen-04.webp",
+      "width": 269,
+      "height": 582,
+      "caption": "Financial opportunities",
+      "alt": "BeeRich: Financial opportunities (identifying details masked)",
+      "sourceProject": "BeeRich",
+      "kind": "Original app screen",
+      "annotation": ""
+    }
+  ],
+  "original": {
+    "src": "/images/projects/beerich-original-board.webp",
+    "width": 2047,
+    "height": 689,
+    "caption": "Complete supplied screen board",
+    "kind": "Original screen board · identifying details masked",
+    "sourceProject": "BeeRich",
+    "alt": "Complete BeeRich app screen board, with identifying details masked",
+    "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+  },
+  "detail": {
+    "src": "/images/projects/beerich-detail.webp",
+    "width": 268,
+    "height": 286
+  }
+}
