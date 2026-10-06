@@ -1,0 +1,219 @@
+{
+  "slug": "moodify",
+  "number": "04",
+  "name": "Moodify",
+  "eyebrow": "04 / DIGITAL WELLBEING",
+  "title": "Make room for a calmer first step.",
+  "line": "Make room for a calmer first step.",
+  "description": "An experience design study connecting a gentle introduction, meditation content, practitioner discovery, and a personal wellbeing overview.",
+  "focus": "Digital wellbeing · Experience design study",
+  "deck": "Moodify explores how a wellbeing experience can bring together a gentle introduction, self-guided meditation, practitioner discovery, and a personal overview. The product question is how to offer a useful direction while leaving the person in control of what comes next.",
+  "fields": [
+    [
+      "Domain",
+      "Digital wellbeing"
+    ],
+    [
+      "Case focus",
+      "Product thinking, user journeys, and interface design"
+    ],
+    [
+      "Experience shown",
+      "Onboarding, meditation discovery, practitioner profile, and dashboard"
+    ],
+    [
+      "Presentation",
+      "Experience design study"
+    ]
+  ],
+  "annotations": [
+    "A clear invitation leaves room to choose.",
+    "Trust depends on understanding who, what, and what happens next.",
+    "The overview should help someone choose one useful direction."
+  ],
+  "sections": [
+    {
+      "title": "Domain context",
+      "body": "A wellbeing product can become another source of decisions if its first experience is too demanding. The design challenge I want to explore is how to introduce useful possibilities without asking someone to explain everything about themselves before beginning.\n\nThe Moodify screens bring together several different intentions: finding a quiet activity, exploring content, considering a conversation, and returning to a personal overview. Those intentions need clear relationships. A welcoming visual style helps establish a tone, while the navigation has to explain what the person can actually do.",
+      "id": "domain-context",
+      "kind": "text"
+    },
+    {
+      "title": "The product question",
+      "body": "**How can a wellbeing app help someone choose a manageable next step without making the experience feel like a test?**\n\nMy starting point is a small, understandable choice. The person should be able to see the available direction, understand what it involves, and decide whether it suits the moment. That gives me a more concrete design question than trying to make every part of the experience feel universally calming.",
+      "id": "the-product-question",
+      "kind": "text"
+    },
+    {
+      "title": "The scope of this case",
+      "body": "This case focuses on the presented interface flow and the reasoning I would use to develop it further: how onboarding sets expectations, how content becomes discoverable, what a practitioner profile needs to explain, and how a dashboard can support a return visit.\n\nThe screens are the design material. The decision notes describe the product questions and evaluation choices I would bring to the next iteration.",
+      "id": "the-scope-of-this-case",
+      "kind": "text"
+    },
+    {
+      "title": "The experience journey",
+      "body": "**1. An invitation to enter**\n\nThe forest entrance and restrained brand treatment create a visual pause. I would keep that atmosphere while making the first action clear and immediate. Someone returning to the app should be able to reach useful content without repeatedly waiting through an introduction.\n\n**2. A short, optional introduction**\n\nThe three onboarding screens introduce emotional awareness, meditation, and connection through imagery. My next step would be to give each panel one clear promise and a specific action. Skip and back controls help preserve choice while the person is still learning what the app offers.\n\n**3. A useful personal overview**\n\nThe dashboard groups Relaxing, Connect, Sound, Learn, and Feelings. I would examine whether these labels help someone choose or leave them guessing about overlapping categories. A useful overview should make it easy to find one relevant activity and return to something familiar.\n\n**4. A route into self-guided content**\n\nThe meditation screen introduces categories and a Counting Breaths card. Before starting an activity, I would want the person to understand what it involves, how long it takes, and whether audio is required. Those details belong to the next content-design iteration; the current board does not establish a completed session experience.\n\n**5. A considered route to connection**\n\nThe profile view brings together personal information, services, reviews, and meeting/message actions. That makes trust and expectation-setting central to the flow. I would want a person to understand the practitioner’s role, relevant qualifications, language, availability, and the next step before sharing personal information or sending a request.",
+      "id": "the-experience-journey",
+      "kind": "journey"
+    },
+    {
+      "title": "The screens and the decisions",
+      "body": "",
+      "id": "the-screens-and-the-decisions",
+      "kind": "gallery"
+    },
+    {
+      "title": "Decision notes",
+      "body": "Questions I would bring to the next iteration.",
+      "id": "decision-notes",
+      "kind": "decisions"
+    },
+    {
+      "title": "Exceptions and boundaries",
+      "body": "I would make the next iteration explicit about the moments where an expectation could be broken: content that cannot load, an interrupted activity, an unavailable practitioner, or a meeting request that has not been accepted.\n\nA request needs its own status. A message needs a realistic response expectation. Personal reflection should have understandable choices about what is stored and who can see it. The experience should also be clear about the limits of the service it provides.\n\nThese are design questions for the next iteration. They are not claims that the current screens represent a clinical service or a completed support workflow.",
+      "id": "exceptions-and-boundaries",
+      "kind": "text"
+    },
+    {
+      "title": "What the work shows",
+      "body": "The presented screens establish an experience direction: a visual welcome, a short introduction, routes into self-guided content and connection, and a dashboard for returning to the product.\n\nThe next step would be to test whether those parts form an understandable journey. I would look for evidence that someone can choose a direction, explain what will happen next, and navigate back without assistance.",
+      "id": "what-the-work-shows",
+      "kind": "text"
+    },
+    {
+      "title": "What I would evaluate next",
+      "body": "| Learning question | Evidence I would seek |\n| --- | --- |\n| Is the beginning understandable? | Whether someone can explain the offer after the introduction and select a first action. |\n| Are the categories distinct? | Whether people choose the expected category for a realistic task and explain that choice. |\n| Does the content set expectations? | Whether someone can explain the activity, duration, and controls before starting. |\n| Does the profile answer trust questions? | What remains unclear before a person considers contacting the practitioner. |\n| Does the dashboard support a return visit? | Whether someone can find a previous activity and understand what the indicators represent. |\n\nI would combine task observation with open questions about comfort and clarity. Time spent and repeat visits may describe use; they do not establish an improvement in wellbeing.",
+      "id": "what-i-would-evaluate-next",
+      "kind": "text"
+    },
+    {
+      "title": "Personal reflection",
+      "body": "**Calm begins with giving someone room to choose.**\n\nMoodify is interesting to me because it changes the tone of the product question. In a merchant workflow, I might emphasize the next operational action. Here, I want the next step to feel understandable without becoming an obligation. The same attention to context and clarity applies, but the pacing and language need to respect a different kind of moment.",
+      "id": "personal-reflection",
+      "kind": "text"
+    }
+  ],
+  "decisions": [
+    {
+      "question": "How much introduction is enough?",
+      "options": "Mandatory multi-step onboarding; optional overview; direct exploration.",
+      "reasoning": "I would keep orientation short and allow exploration early. Guidance can appear again when it becomes relevant.",
+      "check": "Whether people understand the offer and can choose a first activity without help."
+    },
+    {
+      "question": "How should the dashboard organize choices?",
+      "options": "Content types; desired next action; personalized suggestions.",
+      "reasoning": "I would test plain, distinct labels before adding personalization. Each label should set an understandable expectation.",
+      "check": "Where people expect to find a particular activity, and why."
+    },
+    {
+      "question": "What makes a profile useful?",
+      "options": "Lead with imagery and ratings; lead with relevant service details; combine both with clear hierarchy.",
+      "reasoning": "I would prioritize the information needed to understand fit and the next action. Any credential or availability statement needs a dependable source.",
+      "check": "What people need to know before sending a message or requesting a meeting."
+    },
+    {
+      "question": "What should progress communicate?",
+      "options": "Time spent; completed activities; personal reflection.",
+      "reasoning": "I would separate activity from wellbeing. A percentage of tasks completed should not imply a percentage of mental health achieved.",
+      "check": "How people interpret the dashboard indicators and whether any wording creates unnecessary pressure."
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/images/projects/moodify-screen-01.webp",
+      "width": 221,
+      "height": 478,
+      "caption": "Brand introduction",
+      "alt": "Moodify: Brand introduction",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/moodify-screen-02.webp",
+      "width": 221,
+      "height": 478,
+      "caption": "Forest entrance",
+      "alt": "Moodify: Forest entrance",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/moodify-screen-03.webp",
+      "width": 221,
+      "height": 478,
+      "caption": "Onboarding: emotional awareness",
+      "alt": "Moodify: Onboarding: emotional awareness",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": "A clear invitation leaves room to choose."
+    },
+    {
+      "src": "/images/projects/moodify-screen-04.webp",
+      "width": 221,
+      "height": 478,
+      "caption": "Onboarding: meditation",
+      "alt": "Moodify: Onboarding: meditation",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/moodify-screen-05.webp",
+      "width": 221,
+      "height": 478,
+      "caption": "Onboarding: connection",
+      "alt": "Moodify: Onboarding: connection",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/moodify-screen-06.webp",
+      "width": 220,
+      "height": 478,
+      "caption": "Meditation discovery",
+      "alt": "Moodify: Meditation discovery",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": ""
+    },
+    {
+      "src": "/images/projects/moodify-screen-07.webp",
+      "width": 221,
+      "height": 556,
+      "caption": "Example practitioner interface · sample profile content",
+      "alt": "Moodify: Example practitioner interface · sample profile content",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": "Trust depends on understanding who, what, and what happens next."
+    },
+    {
+      "src": "/images/projects/moodify-screen-08.webp",
+      "width": 221,
+      "height": 478,
+      "caption": "Personal overview · sample activity indicators",
+      "alt": "Moodify: Personal overview · sample activity indicators",
+      "sourceProject": "Moodify",
+      "kind": "Original app screen",
+      "annotation": "The overview should help someone choose one useful direction."
+    }
+  ],
+  "original": {
+    "src": "/images/projects/moodify-original-board.webp",
+    "width": 2047,
+    "height": 605,
+    "caption": "Complete supplied screen board",
+    "kind": "Original screen board",
+    "sourceProject": "Moodify",
+    "alt": "Complete Moodify app screen board",
+    "annotation": "The complete supplied interface, shown without perspective or decorative cropping."
+  },
+  "detail": {
+    "src": "/images/projects/moodify-detail.webp",
+    "width": 221,
+    "height": 478
+  }
+}
