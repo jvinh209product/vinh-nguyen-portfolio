@@ -1,0 +1,112 @@
+:root {
+  --motion-fast: .28s;
+  --motion-base: .55s;
+  --motion-slow: .85s;
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+  --cta-warm: #ede3ba;
+  --cta-sage: #e1e7df;
+}
+
+/* Keep the existing type scale; remove only the forced desktop line break. */
+.hero.hero .hero-copy { min-width: 0; }
+.hero.hero .hero-line-mask { display: block; overflow: hidden; padding-bottom: .13em; margin-bottom: -.13em; }
+.hero.hero .hero-line { display: block; }
+@media (min-width: 1000px) {
+  .hero.hero .hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+  .hero.hero h1 .hero-line { white-space: nowrap; }
+}
+
+/* Existing button dimensions and defaults stay; one left-to-right hover wipe. */
+.cta.cta { position: relative; isolation: isolate; overflow: hidden; --cta-fill: var(--cta-warm); }
+.cta.cta.text-link, .cta.cta.back-link, .cta.cta.experience-link, .contact-actions .cta { --cta-fill: var(--cta-sage); }
+.cta .cta-fill { position: absolute; inset: 0; z-index: -1; background: var(--cta-fill); border-radius: inherit; transform: scaleX(0); transform-origin: left; transition: transform var(--motion-fast) var(--motion-ease); pointer-events: none; }
+.cta .cta-label { display: inline-flex; align-items: center; justify-content: center; gap: inherit; }
+.cta .cta-label--filled { position: absolute; inset: 0; padding: inherit; display: flex; color: var(--foreground); clip-path: inset(0 100% 0 0); transition: clip-path var(--motion-fast) var(--motion-ease); pointer-events: none; }
+.cta.cta.primary-link:hover { background: var(--foreground); }
+.cta.cta:focus-visible { outline: 2px solid var(--warm); outline-offset: 5px; }
+.cta.cta:focus-visible .cta-fill, .cta.cta:active .cta-fill { transform: scaleX(1); }
+.cta.cta:focus-visible .cta-label--filled, .cta.cta:active .cta-label--filled { clip-path: inset(0); }
+.cta.cta svg { flex: none; transition: transform var(--motion-fast) var(--motion-ease); }
+@media (hover: hover) and (pointer: fine) {
+  .cta.cta:hover .cta-fill { transform: scaleX(1); }
+  .cta.cta:hover .cta-label--filled { clip-path: inset(0); }
+  .cta.cta:hover svg, .cta.cta:focus-visible svg { transform: translate(2px, -2px); }
+}
+@media (hover: none), (pointer: coarse) {
+  .cta.cta .cta-fill, .cta.cta .cta-label--filled { transition: none; }
+  .cta.cta:hover svg { transform: none; }
+}
+
+/* A single 4:3 edge-to-edge panel for all four original project images. */
+.project-visual.project-media {
+  --media-hover-scale: 1;
+  display: block;
+  padding: 0;
+  aspect-ratio: 4 / 3;
+  background: transparent;
+  border-radius: 5px;
+  max-width: none;
+  overflow: hidden;
+  transform: none;
+}
+.project-media .project-media__viewport { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+.project-media .project-media__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transform: translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0) scale(calc(var(--media-scale, 1) * var(--media-hover-scale)));
+  transition: transform var(--motion-base) var(--motion-ease);
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 1000px) {
+  html[data-motion=full] .cover-link:hover .project-media,
+  html[data-motion=full] .cover-link:focus-visible .project-media { --media-hover-scale: 1.025; }
+  .project-media[data-parallax=active] .project-media__image { transition-duration: .18s; }
+}
+
+.hero-system .hero-system__depth { position: absolute; inset: 0; transform: translate3d(var(--parallax-x, 0px), calc(var(--parallax-y, 0px) + var(--parallax-scroll, 0px)), 0); transition: transform var(--motion-base) var(--motion-ease); }
+.hero-system .hero-system__planes { position: absolute; inset: 0; width: 100%; height: 100%; transform: translate3d(calc(var(--parallax-x, 0px) * -.45), calc(var(--parallax-y, 0px) * -.45), 0); transition: transform var(--motion-base) var(--motion-ease); }
+@media (max-width: 999px) { .hero-system .hero-system__planes .hero-system__secondary-plane { display: none; } }
+
+/* Native details give touch, keyboard and no-JS visitors the complete copy. */
+.domain-grid.domain-grid { gap: 52px 70px; align-items: start; }
+.domain-panel.domain-card { min-width: 0; padding: 0; }
+.domain-card .domain-card__summary { position: relative; display: block; list-style: none; cursor: pointer; padding-top: 24px; }
+.domain-card .domain-card__summary::-webkit-details-marker { display: none; }
+.domain-card .domain-card__summary::marker { content: ''; }
+.domain-card .domain-card__summary:focus-visible { outline: 2px solid var(--warm); outline-offset: 7px; border-radius: 3px; }
+.domain-card.domain-card h3 { margin: 14px 0 15px; font-size: 1.85rem; max-width: none; }
+.domain-card .domain-card__perspective { display: block; margin-top: 7px; font: .8rem/1.5 Arial, Helvetica, sans-serif; letter-spacing: .02em; color: var(--muted-foreground); }
+.domain-card .domain-card__intro { color: var(--muted-foreground); font-size: 1rem; max-width: 390px; }
+.domain-card .domain-card__toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; margin-top: 17px; color: var(--warm); font-size: .75rem; }
+.domain-card .domain-card__toggle svg { transition: transform var(--motion-fast) var(--motion-ease); }
+.domain-card[open] .domain-card__toggle svg { transform: rotate(180deg); }
+.domain-card .domain-card__detail { padding: 15px 0 4px; }
+.domain-card .domain-card__detail > p { color: var(--muted-foreground); font-size: .95rem; }
+.domain-card .domain-card__detail blockquote { margin-top: 23px; }
+.domain-card .domain-object { display: block; width: 100%; height: 156px; margin: 4px 0 0; color: var(--foreground); overflow: visible; }
+.domain-object :is(.domain-object__rear, .domain-object__core, .domain-object__accent) { transform-box: fill-box; transform-origin: center; transition: transform var(--motion-base) var(--motion-ease); }
+@media (hover: hover) and (pointer: fine) {
+  html[data-motion=full] .domain-card:hover .domain-object__rear { transform: translate(-2px, 2px); }
+  html[data-motion=full] .domain-card:hover .domain-object__core,
+  html[data-motion=full] .domain-card:focus-within .domain-object__core { transform: translateY(-3px); }
+  html[data-motion=full] .domain-card:hover .domain-object__accent { transform: translate(2px, -2px); }
+}
+/* Unsupported browsers keep the fully usable native open/close behavior. */
+@supports (interpolate-size: allow-keywords) {
+  .domain-card.domain-card { interpolate-size: allow-keywords; }
+  .domain-card::details-content { block-size: 0; opacity: 0; overflow: clip; transition: block-size var(--motion-base) var(--motion-ease), opacity var(--motion-fast) var(--motion-ease), content-visibility var(--motion-base) allow-discrete; }
+  .domain-card[open]::details-content { block-size: auto; opacity: 1; }
+}
+@media (max-width: 760px) {
+  .domain-grid.domain-grid { gap: 35px; }
+  .domain-card.domain-card h3 { font-size: 1.75rem; }
+  .domain-card .domain-object { height: 142px; }
+}
+html[data-motion=reduced] .hero-system .hero-system__depth,
+html[data-motion=reduced] .hero-system .hero-system__planes,
+html[data-motion=reduced] .project-media .project-media__image,
+html[data-motion=reduced] .domain-object :is(.domain-object__rear, .domain-object__core, .domain-object__accent) { transform: none; }
+html[data-motion=reduced] .domain-card::details-content { transition: none; }
+@media (prefers-reduced-motion: reduce) { html:not([data-motion=full]) .domain-card::details-content { transition: none; } }

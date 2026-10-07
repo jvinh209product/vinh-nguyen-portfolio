@@ -23,7 +23,7 @@ for (const route of [...routes, '/404']) {
     .replace(/<meta name="description" content="[^"]*"\s*\/>/, `<meta name="description" content="${escape(metadata.description)}" />`)
     .replace('<!--route-canonical-->', canonical)
     .replace('<div id="root">', `<div id="root" data-prerendered="${route}">`)
-    .replace(/<!--app-start-->[\s\S]*?<!--app-end-->/, render(route));
+    .replace(/<!--app-start-->[\s\S]*?<!--app-end-->/, await render(route));
   const output = route === '/' ? 'dist/index.html' : `dist${route}.html`;
   await mkdir(path.dirname(output), { recursive: true });
   await writeFile(output, html);

@@ -4,9 +4,9 @@ import { createContext, useContext, useEffect, useRef, useState, type ReactNode,
 import type { gsap } from 'gsap';
 import type { MotionEngine } from './motion-engine';
 import { Pause, Play } from 'lucide-react';
+import { motion } from '../lib/motion';
 
-// No animation runtime is evaluated during server rendering. GSAP starts its
-// ticker on import, which Cloudflare forbids at Worker module scope.
+// Animation libraries are enhancements: never evaluate them during prerender.
 export function useGSAP(callback: (engine: MotionEngine, safe: <T extends (...args: any[]) => any>(fn: T) => T) => void | (() => void), config: { scope: RefObject<HTMLElement | null>; dependencies: unknown[]; revertOnUpdate?: boolean; onError?: () => void }, supplied?: MotionEngine | null) {
   const motion = useMotion();
   const engine = supplied === undefined ? motion.engine : supplied;
@@ -61,6 +61,22 @@ export function MotionRoot({ children }: { children: ReactNode }) {
     return () => { alive = false; };
   }, [ready, reduced]);
   useEffect(() => { document.documentElement.dataset.motion = ready && engine && !reduced ? 'full' : 'reduced'; }, [ready, reduced, engine]);
+  useEffect(() => {
+    if (!ready || reduced || !engine) return;
+    const mq = matchMedia('(min-width: 1000px) and (pointer: fine)');
+    let alive = true, generation = 0;
+    let dispose: (() => void) | undefined;
+    const sync = () => {
+      const current = ++generation;
+      dispose?.(); dispose = undefined;
+      if (!mq.matches) return;
+      import('../lib/smooth-scroll').then(({ createSmoothScroll }) => {
+        if (alive && current === generation && mq.matches) dispose = createSmoothScroll(engine);
+      }).catch(error => console.warn('Smooth scrolling unavailable; native scrolling remains active.', error));
+    };
+    sync(); mq.addEventListener('change', sync);
+    return () => { alive = false; generation++; dispose?.(); mq.removeEventListener('change', sync); };
+  }, [ready, reduced, engine]);
 
   useGSAP(({ gsap, ScrollTrigger }) => {
     if (!ready || !scope.current) return;
@@ -74,8 +90,13 @@ export function MotionRoot({ children }: { children: ReactNode }) {
         if (conditions.fine && q('.portrait-drift').length) gsap.to(q('.portrait-drift'), { y: 28, ease: 'none', scrollTrigger: { trigger: q('.hero')[0], start: 'top top', end: 'bottom top', scrub: .6 } });
       }
       q('.domain-panel').forEach((panel) => {
-        gsap.from(panel.querySelector('.domain-rule'), { scaleX: 0, transformOrigin: 'left', duration: .45, scrollTrigger: { trigger: panel, start: 'top 82%', once: true } });
-        gsap.from(panel.querySelector('blockquote'), { color: '#697780', duration: .45, scrollTrigger: { trigger: panel, start: 'top 70%', once: true } });
+        gsap.from(panel.querySelector('.domain-rule'), { scaleX: 0, transformOrigin: 'left', duration: motion.base, ease: motion.easeOut, scrollTrigger: { trigger: panel, start: 'top 82%', once: true } });
+      });
+      q('.project-summary').forEach((summary) => {
+        gsap.from(summary.children, { y: 10, opacity: .82, duration: motion.base, stagger: motion.stagger, ease: motion.easeOut, clearProps: 'all', scrollTrigger: { trigger: summary, start: 'top 88%', once: true } });
+      });
+      q('.inline-cover .project-media__viewport').forEach((media) => {
+        gsap.from(media, { clipPath: 'inset(0 0 5% 0)', duration: motion.slow, ease: motion.easeOut, clearProps: 'clipPath', scrollTrigger: { trigger: media, start: 'top 88%', once: true } });
       });
       q('.story-section').forEach((section) => {
         gsap.from(section.querySelector('.section-number'), { scaleX: .8, transformOrigin: 'left', opacity: .5, duration: .4, clearProps: 'all', scrollTrigger: { trigger: section, start: 'top 86%', once: true } });
@@ -87,13 +108,18 @@ export function MotionRoot({ children }: { children: ReactNode }) {
       q('.contact h2').forEach((title) => gsap.from(title.children, { y: 14, opacity: .55, stagger: .08, duration: .38, clearProps: 'all', scrollTrigger: { trigger: title, start: 'top 90%', once: true } }));
       q('.personal .body-copy').forEach((paragraph) => gsap.from(paragraph, { y: 10, duration: .45, clearProps: 'all', scrollTrigger: { trigger: paragraph, start: 'top 90%', once: true } }));
     });
-    let alive = true;
-    const refresh = () => { if (alive) ScrollTrigger.refresh(); };
+    let alive = true, refreshFrame = 0;
+    // Font and simultaneous responsive-image loads share one layout refresh.
+    const refresh = () => {
+      if (!alive || refreshFrame) return;
+      refreshFrame = requestAnimationFrame(() => { refreshFrame = 0; if (alive) ScrollTrigger.refresh(); });
+    };
     document.fonts?.ready.then(refresh).catch(error => console.warn('Font refresh unavailable', error));
     const images = Array.from(scope.current.querySelectorAll('img'));
     images.forEach(img => img.addEventListener('load', refresh, { once: true }));
+    window.addEventListener('portfolio:layout', refresh);
     const timer = setTimeout(refresh, 100);
-    return () => { alive = false; clearTimeout(timer); images.forEach(img => img.removeEventListener('load', refresh)); mm.revert(); };
+    return () => { alive = false; clearTimeout(timer); window.removeEventListener('portfolio:layout', refresh); cancelAnimationFrame(refreshFrame); images.forEach(img => img.removeEventListener('load', refresh)); mm.revert(); };
   }, { scope, dependencies: [ready, reduced], revertOnUpdate: true, onError: failMotion }, engine);
   return <MotionContext.Provider value={{ mode, reduced, ready, engine, failMotion, setMode }}><div ref={scope} className="site-root">{children}</div></MotionContext.Provider>;
 }

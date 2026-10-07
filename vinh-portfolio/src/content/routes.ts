@@ -1,4 +1,4 @@
-import data from './public.json';
+import data from './home.json';
 
 export const homeTitle = 'Vinh Nguyen — Product Thinking, Business Analysis & UX';
 export const homeDescription = 'Selected work and product thinking by Vinh Nguyen, exploring personal finance, merchant workflows, debt tracking, and digital wellbeing.';

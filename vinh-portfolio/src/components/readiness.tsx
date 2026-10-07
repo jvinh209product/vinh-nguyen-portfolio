@@ -70,11 +70,13 @@ export function PageReadiness() {
       paint = requestAnimationFrame(() => {
         if (abort.signal.aborted) return;
         advance(100);
+        document.documentElement.dataset.readiness = 'ready';
+        window.dispatchEvent(new CustomEvent('portfolio:ready'));
         try { sessionStorage.setItem('vinh-ready-v1', 'yes'); } catch {}
         setLeaving(true);
         if (shown) exitTimer = setTimeout(() => setVisible(false), reduced.current ? 0 : 180);
-        // One brief reveal, never a second GSAP intro after the percentage screen.
-        const hero = main.querySelector<HTMLElement>('.hero-copy, .case-opening h1, .about-opening h1');
+        // Homepage owns its readiness-gated sequence; other pages retain the brief reveal.
+        const hero = main.querySelector<HTMLElement>('.case-opening h1, .about-opening h1');
         if (!visited && !reduced.current && hero?.animate) {
           const entrance = hero.animate([{ opacity: .8, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 220, easing: 'ease-out' });
           abort.signal.addEventListener('abort', () => entrance.cancel(), { once: true });

@@ -1,0 +1,56 @@
+{
+  "/images/projects/01-home-debtledger.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/01-home-debtledger-640.avif 640w, /images/optimized/01-home-debtledger-960.avif 960w, /images/optimized/01-home-debtledger-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/01-home-debtledger-640.webp 640w, /images/optimized/01-home-debtledger-960.webp 960w, /images/optimized/01-home-debtledger-1448.webp 1448w"
+  },
+  "/images/projects/02-home-mseller.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/02-home-mseller-640.avif 640w, /images/optimized/02-home-mseller-960.avif 960w, /images/optimized/02-home-mseller-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/02-home-mseller-640.webp 640w, /images/optimized/02-home-mseller-960.webp 960w, /images/optimized/02-home-mseller-1448.webp 1448w"
+  },
+  "/images/projects/03-home-beerich.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/03-home-beerich-640.avif 640w, /images/optimized/03-home-beerich-960.avif 960w, /images/optimized/03-home-beerich-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/03-home-beerich-640.webp 640w, /images/optimized/03-home-beerich-960.webp 960w, /images/optimized/03-home-beerich-1448.webp 1448w"
+  },
+  "/images/projects/04-home-moodify.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/04-home-moodify-640.avif 640w, /images/optimized/04-home-moodify-960.avif 960w, /images/optimized/04-home-moodify-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/04-home-moodify-640.webp 640w, /images/optimized/04-home-moodify-960.webp 960w, /images/optimized/04-home-moodify-1448.webp 1448w"
+  },
+  "/images/projects/01-detail-debtledger.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/01-detail-debtledger-640.avif 640w, /images/optimized/01-detail-debtledger-960.avif 960w, /images/optimized/01-detail-debtledger-1440.avif 1440w, /images/optimized/01-detail-debtledger-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/01-detail-debtledger-640.webp 640w, /images/optimized/01-detail-debtledger-960.webp 960w, /images/optimized/01-detail-debtledger-1440.webp 1440w, /images/optimized/01-detail-debtledger-1672.webp 1672w"
+  },
+  "/images/projects/02-detail-mseller.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/02-detail-mseller-640.avif 640w, /images/optimized/02-detail-mseller-960.avif 960w, /images/optimized/02-detail-mseller-1440.avif 1440w, /images/optimized/02-detail-mseller-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/02-detail-mseller-640.webp 640w, /images/optimized/02-detail-mseller-960.webp 960w, /images/optimized/02-detail-mseller-1440.webp 1440w, /images/optimized/02-detail-mseller-1672.webp 1672w"
+  },
+  "/images/projects/03-detail-beerich.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/03-detail-beerich-640.avif 640w, /images/optimized/03-detail-beerich-960.avif 960w, /images/optimized/03-detail-beerich-1440.avif 1440w, /images/optimized/03-detail-beerich-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/03-detail-beerich-640.webp 640w, /images/optimized/03-detail-beerich-960.webp 960w, /images/optimized/03-detail-beerich-1440.webp 1440w, /images/optimized/03-detail-beerich-1672.webp 1672w"
+  },
+  "/images/projects/04-detail-moodify.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/04-detail-moodify-640.avif 640w, /images/optimized/04-detail-moodify-960.avif 960w, /images/optimized/04-detail-moodify-1440.avif 1440w, /images/optimized/04-detail-moodify-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/04-detail-moodify-640.webp 640w, /images/optimized/04-detail-moodify-960.webp 960w, /images/optimized/04-detail-moodify-1440.webp 1440w, /images/optimized/04-detail-moodify-1672.webp 1672w"
+  },
+  "/images/vinh-portrait.webp": {
+    "width": 800,
+    "height": 1200,
+    "avifSrcSet": "/images/optimized/vinh-portrait-400.avif 400w, /images/optimized/vinh-portrait-640.avif 640w, /images/optimized/vinh-portrait-800.avif 800w",
+    "webpSrcSet": "/images/optimized/vinh-portrait-400.webp 400w, /images/optimized/vinh-portrait-640.webp 640w, /images/optimized/vinh-portrait-800.webp 800w"
+  }
+}

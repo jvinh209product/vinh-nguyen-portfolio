@@ -1,5 +1,7 @@
 # Upgrade report — 6 October 2026
 
+This report describes the first upgrade package. The current Sites draft also includes the subsequent Round 2 refinements documented in `ROUND2.md`. Its full-bleed media and input-driven 3D supersede the initial treatments described below. Historical bundle sizes and browser results here are not measurements of Round 2.
+
 Prepared from the complete standalone export, with the live Vercel homepage checked against the recovered structure. Canonical copy and original public assets remain identical. No live site or production branch was changed.
 
 ## Changed areas
