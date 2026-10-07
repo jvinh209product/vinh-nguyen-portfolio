@@ -1,0 +1,6 @@
+import { Shell, Contact } from '../components/Shell';
+import { Prose } from '../components/Prose';
+import { ResponsiveImage } from '../components/ResponsiveImage';
+import about from '../content/about.json';
+const portrait='/images/vinh-portrait.webp';
+export default function AboutPage(){return <Shell><main id="main"><section id="top" className="about-opening section"><div><p className="eyebrow">ABOUT VINH</p><h1 tabIndex={-1}>I’m interested in<br/>the decisions<br/><em>behind the interface.</em></h1><div className="body-copy"><Prose text={about.Opening}/></div></div><figure className="about-portrait"><ResponsiveImage sizes="(max-width: 760px) 454px, 470px" src={portrait} alt="Vinh Nguyen in a blue suit" width="800" height="1200" data-entry-media="true"/><figcaption>Vinh Nguyen · Vietnam, UTC+7</figcaption></figure></section><div className="about-body section">{Object.entries(about).filter(([key])=>key!=='Opening').map(([title,body],i)=><section className="about-section" id={i===1?'experience':undefined} key={title}><p className="eyebrow">0{i+1} / ABOUT ME</p><div><h2>{title}</h2><Prose text={body}/></div></section>)}</div><Contact/></main></Shell>;}
