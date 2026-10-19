@@ -3,8 +3,8 @@
   --motion-base: .55s;
   --motion-slow: .85s;
   --motion-ease: cubic-bezier(.22, 1, .36, 1);
-  --cta-warm: #ede3ba;
-  --cta-sage: #e1e7df;
+  --cta-warm: var(--interaction-accent);
+  --cta-sage: var(--interaction-accent);
 }
 
 /* Keep the existing type scale; remove only the forced desktop line break. */
@@ -17,13 +17,13 @@
 }
 
 /* Existing button dimensions and defaults stay; one left-to-right hover wipe. */
-.cta.cta { position: relative; isolation: isolate; overflow: hidden; --cta-fill: var(--cta-warm); }
-.cta.cta.text-link, .cta.cta.back-link, .cta.cta.experience-link, .contact-actions .cta { --cta-fill: var(--cta-sage); }
+.cta.cta { position: relative; isolation: isolate; overflow: hidden; --cta-fill: var(--interaction-hover); }
+.cta.cta.text-link, .cta.cta.back-link, .cta.cta.experience-link, .contact-actions .cta { --cta-fill: var(--interaction-hover); }
 .cta .cta-fill { position: absolute; inset: 0; z-index: -1; background: var(--cta-fill); border-radius: inherit; transform: scaleX(0); transform-origin: left; transition: transform var(--motion-fast) var(--motion-ease); pointer-events: none; }
 .cta .cta-label { display: inline-flex; align-items: center; justify-content: center; gap: inherit; }
-.cta .cta-label--filled { position: absolute; inset: 0; padding: inherit; display: flex; color: var(--foreground); clip-path: inset(0 100% 0 0); transition: clip-path var(--motion-fast) var(--motion-ease); pointer-events: none; }
+.cta .cta-label--filled { position: absolute; inset: 0; padding: inherit; display: flex; color: var(--on-accent); clip-path: inset(0 100% 0 0); transition: clip-path var(--motion-fast) var(--motion-ease); pointer-events: none; }
 .cta.cta.primary-link:hover { background: var(--foreground); }
-.cta.cta:focus-visible { outline: 2px solid var(--warm); outline-offset: 5px; }
+.cta.cta:focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; }
 .cta.cta:focus-visible .cta-fill, .cta.cta:active .cta-fill { transform: scaleX(1); }
 .cta.cta:focus-visible .cta-label--filled, .cta.cta:active .cta-label--filled { clip-path: inset(0); }
 .cta.cta svg { flex: none; transition: transform var(--motion-fast) var(--motion-ease); }
@@ -75,7 +75,7 @@
 .domain-card .domain-card__summary { position: relative; display: block; list-style: none; cursor: pointer; padding-top: 24px; }
 .domain-card .domain-card__summary::-webkit-details-marker { display: none; }
 .domain-card .domain-card__summary::marker { content: ''; }
-.domain-card .domain-card__summary:focus-visible { outline: 2px solid var(--warm); outline-offset: 7px; border-radius: 3px; }
+.domain-card .domain-card__summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 7px; border-radius: 3px; }
 .domain-card.domain-card h3 { margin: 14px 0 15px; font-size: 1.85rem; max-width: none; }
 .domain-card .domain-card__perspective { display: block; margin-top: 7px; font: .8rem/1.5 Arial, Helvetica, sans-serif; letter-spacing: .02em; color: var(--muted-foreground); }
 .domain-card .domain-card__intro { color: var(--muted-foreground); font-size: 1rem; max-width: 390px; }

@@ -1,19 +1,19 @@
-# Vinh Nguyen portfolio — Round 2 / version 6 export
+# Vinh Nguyen — published portfolio source
 
-This complete standalone package represents **ChatGPT Sites unpublished version 6 / Round 2**, source commit `3ac0219add70c5bfc4faf78941c0f2575e64eea2`. Application source, configuration, content, original images, responsive variants and licenses are copied from that exact saved source. Only Sites hosting metadata/workflow notes are omitted, and this README and `VALIDATION.md` are updated for the export. `EXPORT-MANIFEST.json` records source hashes and provenance. No Site or GitHub changes, publication or deployment are performed by this export.
+Complete editable source of the existing portfolio's **published Version 10**, retrieved from commit `e68d03bf4a6fb8bd24940fe0023259be75759cf8`. Publication status was checked against the complete available saved-version history and the successful production deployment at 2026-10-14T08:06:11.346Z. Older unpublished revisions were excluded. See `EXPORT-MANIFEST.json` and `VALIDATION.md` for provenance and the clean-build results.
 
-Standalone React + TypeScript + Vite portfolio with the homepage motion, 3D and performance upgrade. The version 6 hero, CTA wipes, full-bleed Work imagery, parallax, interactive domains, approved copy, typography, palette, navigation, footer and complete case studies are retained. See `ROUND2.md` for the exact saved refinements and `VALIDATION.md` for this export’s checks. `UPGRADE.md` is historical background for the first upgrade.
+The ZIP has **no wrapper directory**: `package.json` is at its root. For the existing GitHub repository, copy these extracted contents **inside `vinh-portfolio/`**. Follow `DEPLOYMENT.md`; this export does not push or deploy anything.
 
-## Run locally
+## Install, run and build
 
-Use Node.js **24** (recorded in `.nvmrc`) and npm; the project requires Node >=22.13.0. Open a terminal in this `vinh-portfolio` folder:
+Use Node **24.x** (`.nvmrc`), with the matching npm lockfile. The source engine requirement remains `>=22.13.0`.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-For a reproducible installation use `npm ci`. Build and inspect production:
+For production:
 
 ```sh
 npm run check
@@ -21,59 +21,34 @@ npm run build
 npm run preview
 ```
 
-Open Vite's HTTP URL. Production files are in `dist/`. No server, ChatGPT Sites runtime, authentication, database, D1, R2 or remote asset service is required.
+The build preserves the published pipeline: split original authored content → TypeScript check → Vite client build → Vite SSR build → per-route HTML prerender. `dist/` is the production output. SSR is build-time only; hosting needs no application server, ChatGPT runtime, authentication, D1, R2 or Sites APIs.
 
-## Structure
+## Structure and editable content
 
 | Path | Purpose |
 | --- | --- |
-| `src/main.tsx`, `App.tsx`, `route-loader.ts` | Load the requested page and hydrate its complete static HTML |
-| `src/pages` | Home, About, four case entries, shared case renderer and not-found page |
-| `src/components/Hero.tsx`, `CTA.tsx`, `Domains.tsx` | Version 6 hero entrance, shared CTA wipe and accessible domain disclosures |
-| `src/components/Shell.tsx`, `Prose.tsx` | Existing navigation, footer, contact and content rendering |
-| `src/components/work` | Shared homepage `ProjectMedia`; preserved detail/next-case `ProjectCover` |
-| `src/components/3d` | Static hero system and lazy procedural Three/R3F scene |
-| `src/components/motion.tsx`, `motion-engine.ts` | Scoped GSAP/ScrollTrigger, preference, marquee and reveals |
-| `src/lib/use-surface-parallax.ts` | Input-driven, bounded parallax with visibility/device gating |
-| `src/lib/smooth-scroll.ts`, `motion.ts` | Desktop Lenis and motion constants |
-| `src/components/readiness.tsx` | Critical image readiness and short loader |
-| `src/components/ledger.tsx`, `ui` | Existing ledger and Radix primitives |
-| `src/content/public.json` | Single editable source for original copy |
-| `src/content/home.json`, `about.json`, `projects` | Generated route data; do not edit directly |
-| `src/content/media.ts`, `image-manifest.json` | Image mapping, framing and responsive variants |
-| `src/styles/globals.css`, `enhancements.css`, `round2.css` | Original styles and scoped additions |
-| `public/images` | All original assets, unchanged |
-| `public/images/optimized` | Committed AVIF/WebP derivatives |
-| `scripts/split-content.mjs` | Generates route data before the build |
-| `src/entry-server.tsx`, `scripts/prerender.mjs` | Build-time-only static rendering |
-| `scripts/optimize-images.mjs` | Offline image pipeline using Sharp |
+| `src/main.tsx`, `src/App.tsx`, `src/route-loader.ts` | Route selection and hydration of static HTML |
+| `src/pages/` | Home, About, all published case pages and 404 |
+| `src/content/public.json` | Authored source for original product cases, domains, thinking and About copy |
+| `src/content/home.json`, `about.json`, `projects/` | Generated route data; regenerated by `scripts/split-content.mjs` |
+| `src/content/builds.ts`, `src/content/builds/` | Interactive-build summaries, canonical live URLs, mockups and complete case stories |
+| `src/content/routes.ts`, `media.ts`, `image-manifest.json` | SEO, original project media mapping and responsive variants |
+| `src/components/`, `src/lib/` | Shared shell, CTA wipe, viewers, GSAP, Lenis, parallax and procedural Three/R3F hero |
+| `src/styles/`, `src/vendor/` | Published typography, colors, responsive rules and retained vendor stylesheet |
+| `public/images/` | Originals, screenshots, portraits and supplied product mockups |
+| `public/images/optimized/` | Committed AVIF/WebP derivatives |
+| `scripts/` | Original splitting, prerender and image-optimization scripts |
+| `vercel.json` | Existing Vite/static configuration with clean URLs |
 
-Fonts remain Arial/Helvetica and Georgia/Times with system fallbacks; no external font requests are added.
+All published application source and assets are preserved byte-for-byte. Only handoff/validation documentation is refreshed; the private Sites hosting declaration and historical release notes are omitted. System fonts remain as published; no font service or generated substitute is introduced. The procedural 3D scene needs no external models/textures. Existing dependency and vendor license notices remain intact.
 
-## Content and assets
+The export contains **277 public assets**, including **208 optimized image files** and **28 responsive manifest entries**. No asset is omitted or regenerated. Optimization scripts are retained for future deliberate image changes; deployment already has every required variant and does not need to rerun them.
 
-Edit copy only in `src/content/public.json`; builds regenerate the route data. Each complete case ships in its own route chunk. All 48 original raster assets and the favicon remain intact. Nine primary images have responsive AVIF/WebP variants with known dimensions. The portrait is high priority; below-fold covers remain lazy. Original sources remain the final format fallback.
+## Routes and SEO
 
-After deliberately changing an original source image, regenerate and commit the derivatives and manifest:
+Routes below were discovered from this revision, rather than copied from a historical route count.
 
-```sh
-npm run images
-npm run build
-```
-
-Deployment does not re-encode images. The pipeline never redraws, retouches or crops originals.
-
-## Motion and 3D
-
-Static HTML, text and the portrait render first. On visible desktop heroes with a fine pointer, critical readiness and an idle callback permit the lazy scene to load. A WebGL2 capability check runs before importing Three. Mobile, reduced motion, data-saving connections and unsupported devices keep the static ring system.
-
-The procedural scene has no models, textures, Drei, shadows or postprocessing. DPR is capped. Demand rendering responds to pointer/scroll input, stops after transforms settle, and pauses offscreen or in hidden tabs. Decoration cannot intercept pointers or convey essential information. Domain objects are embedded SVG, with no extra renderer or continuous loops; native details keep all explanations accessible on hover/focus/tap and without JavaScript. CTA fill and label clipping preserve contrast; the decorative duplicate label is aria-hidden.
-
-Lenis interpolates desktop wheels with a short response. It shares GSAP's ticker only while scrolling, removes its callback when idle and resets its clock on restart. Touch stays native. Keyboard input cancels interpolation; anchors preserve URL history and target focus. Dialogs/viewers scroll natively. Reduced motion destroys smoothing and disables WebGL. The footer preference remains available. Listeners, observers, timers and animation instances clean up on teardown.
-
-## Routes
-
-| URL | Production HTML |
+| URL | Generated HTML |
 | --- | --- |
 | `/` | `dist/index.html` |
 | `/about` | `dist/about.html` |
@@ -81,35 +56,37 @@ Lenis interpolates desktop wheels with a short response. It shares GSAP's ticker
 | `/work/mseller` | `dist/work/mseller.html` |
 | `/work/beerich` | `dist/work/beerich.html` |
 | `/work/moodify` | `dist/work/moodify.html` |
-| `/404` and unknown paths | `dist/404.html` |
+| `/work/betterbet` | `dist/work/betterbet.html` |
+| `/work/pulse-city` | `dist/work/pulse-city.html` |
+| `/work/ship-it` | `dist/work/ship-it.html` |
+| `/work/gieo` | `dist/work/gieo.html` |
+| `/404` | `dist/404.html` |
 
-React server rendering runs only at build time. Complete HTML stays visible while the matching page module loads, then React hydrates it. Native document navigation, CSS view transitions, anchors, history and direct refreshes remain. No router framework or blanket SPA fallback is needed.
+Each route retains its complete HTML, metadata and page-specific JavaScript. Native document navigation and direct refresh remain. `vercel.json` uses `cleanUrls: true` and `trailingSlash: false`; **no blanket SPA fallback** is added. `404.html` retains the published not-found experience and `noindex` metadata. No explicit sitemap or `robots.txt` exists in the published source, so none is invented here.
 
-## Environment
+## Environment and canonical URL
 
-No secrets, analytics keys or email service are required. `.env.example` documents this optional public canonical origin:
+No secrets or API services are required. `.env.example` preserves the optional public build setting:
 
 ```dotenv
-VITE_SITE_URL=https://your-domain.example
+# VITE_SITE_URL=https://your-existing-production-domain.example
 ```
 
-Use `.env.local` locally or the host's build environment. Without it, canonical paths are relative. `VITE_` values are public and must never contain secrets.
+Without this value, prerendered canonicals are relative and the client resolves them against the serving origin, as in the source. Set `VITE_SITE_URL` to the existing Vercel production origin only after confirming that domain in your dashboard. The dashboard and its environment settings were not inspected; no Vercel domain is guessed or hard-coded. `VITE_*` values are public browser configuration and must never contain secrets.
 
-## GitHub and Vercel
+## Published external experiences
 
-Apply this complete source on **`upgrade/home-motion-3d`** in the existing repository. Copy the entire contents of the extracted `vinh-portfolio` folder into your existing Vite project root (the directory containing `package.json`), preserving its relative paths. Do not add an extra nesting level to an already-configured Vercel root. The ZIP is a complete project, not a patch; exclude `node_modules`, `dist` and private environment files. When applying over the previous export, remove the obsolete `src/components/portfolio.tsx`, which was split into shared/page components.
+These links were read from the published canonical project data and are preserved unchanged. The portfolio ZIP includes their case studies and media, not the external products' repositories.
 
-| Setting | Value |
-| --- | --- |
-| Framework | Vite |
-| Root directory | Folder containing `package.json` |
-| Install command | `npm ci` |
-| Build command | `npm run build` |
-| Output directory | `dist` |
-| Node.js | 24.x |
+| Project | Internal case route | Live experience |
+| --- | --- | --- |
+| BETTERBET. | /work/betterbet | https://betterbet-lab.vercel.app/ |
+| PULSE CITY | /work/pulse-city | https://pulse-city-three.vercel.app/ |
+| SHIP IT! | /work/ship-it | https://pmshipit-pmshipit.vercel.app/ |
+| GIEO. | /work/gieo | https://gieo-gieo.vercel.app/ |
 
-The existing `vercel.json` preserves clean URLs. Push the branch to generate Vercel Preview when the repository is connected. Review that Preview, including 3D on a GPU-enabled browser, before merging into `main`. This package has not been pushed, merged or deployed automatically. GitHub repository: `jvinh209product/vinh-nguyen-portfolio`; intended branch: `upgrade/home-motion-3d`. Do not apply it directly to `main`.
+## Deployment
 
-## Cloudflare Pages
+For the existing GitHub/Vercel project, follow `DEPLOYMENT.md`: new branch → copy contents into `vinh-portfolio/` → test Vercel Preview → review/approval → merge into `main` → existing production deployment.
 
-Connect the repository with build command `npm run build`, output `dist` and build environment `NODE_VERSION=24`. No Functions, Workers or bindings are required. Pages serves the prerendered HTML at extensionless URLs; `404.html` retains the not-found experience. Alternatively upload the built `dist` contents through Direct Upload.
+For Cloudflare Pages, use project root `vinh-portfolio`, build `npm run build`, output `dist`, and `NODE_VERSION=24`. Preserve the prerendered extensionless pages and custom 404. No Workers, Functions, bindings or SPA rewrite are required. Cloudflare deployment itself was not performed or verified.

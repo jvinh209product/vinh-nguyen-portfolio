@@ -52,5 +52,119 @@
     "height": 1200,
     "avifSrcSet": "/images/optimized/vinh-portrait-400.avif 400w, /images/optimized/vinh-portrait-640.avif 640w, /images/optimized/vinh-portrait-800.avif 800w",
     "webpSrcSet": "/images/optimized/vinh-portrait-400.webp 400w, /images/optimized/vinh-portrait-640.webp 640w, /images/optimized/vinh-portrait-800.webp 800w"
+  },
+  "/images/builds/betterbet.jpg": {
+    "width": 1200,
+    "height": 750,
+    "avifSrcSet": "/images/optimized/build-betterbet-480.avif 480w, /images/optimized/build-betterbet-768.avif 768w, /images/optimized/build-betterbet-1200.avif 1200w",
+    "webpSrcSet": "/images/optimized/build-betterbet-480.webp 480w, /images/optimized/build-betterbet-768.webp 768w, /images/optimized/build-betterbet-1200.webp 1200w"
+  },
+  "/images/builds/pulse-city.jpg": {
+    "width": 1200,
+    "height": 750,
+    "avifSrcSet": "/images/optimized/build-pulse-city-480.avif 480w, /images/optimized/build-pulse-city-768.avif 768w, /images/optimized/build-pulse-city-1200.avif 1200w",
+    "webpSrcSet": "/images/optimized/build-pulse-city-480.webp 480w, /images/optimized/build-pulse-city-768.webp 768w, /images/optimized/build-pulse-city-1200.webp 1200w"
+  },
+  "/images/builds/gieo.jpg": {
+    "width": 1200,
+    "height": 750,
+    "avifSrcSet": "/images/optimized/build-gieo-480.avif 480w, /images/optimized/build-gieo-768.avif 768w, /images/optimized/build-gieo-1200.avif 1200w",
+    "webpSrcSet": "/images/optimized/build-gieo-480.webp 480w, /images/optimized/build-gieo-768.webp 768w, /images/optimized/build-gieo-1200.webp 1200w"
+  },
+  "/images/builds/v2-2/home-betterbet2.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/v22-home-betterbet2-480.avif 480w, /images/optimized/v22-home-betterbet2-768.avif 768w, /images/optimized/v22-home-betterbet2-1200.avif 1200w, /images/optimized/v22-home-betterbet2-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/v22-home-betterbet2-480.webp 480w, /images/optimized/v22-home-betterbet2-768.webp 768w, /images/optimized/v22-home-betterbet2-1200.webp 1200w, /images/optimized/v22-home-betterbet2-1448.webp 1448w"
+  },
+  "/images/builds/v2-2/detail-betterbet.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-betterbet-480.avif 480w, /images/optimized/v22-detail-betterbet-768.avif 768w, /images/optimized/v22-detail-betterbet-1200.avif 1200w, /images/optimized/v22-detail-betterbet-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-betterbet-480.webp 480w, /images/optimized/v22-detail-betterbet-768.webp 768w, /images/optimized/v22-detail-betterbet-1200.webp 1200w, /images/optimized/v22-detail-betterbet-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/home-betterbet.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/v22-home-betterbet-480.avif 480w, /images/optimized/v22-home-betterbet-768.avif 768w, /images/optimized/v22-home-betterbet-1200.avif 1200w, /images/optimized/v22-home-betterbet-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/v22-home-betterbet-480.webp 480w, /images/optimized/v22-home-betterbet-768.webp 768w, /images/optimized/v22-home-betterbet-1200.webp 1200w, /images/optimized/v22-home-betterbet-1448.webp 1448w"
+  },
+  "/images/builds/v2-2/detail-betterbet2.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-betterbet2-480.avif 480w, /images/optimized/v22-detail-betterbet2-768.avif 768w, /images/optimized/v22-detail-betterbet2-1200.avif 1200w, /images/optimized/v22-detail-betterbet2-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-betterbet2-480.webp 480w, /images/optimized/v22-detail-betterbet2-768.webp 768w, /images/optimized/v22-detail-betterbet2-1200.webp 1200w, /images/optimized/v22-detail-betterbet2-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/home-pulsecity.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/v22-home-pulsecity-480.avif 480w, /images/optimized/v22-home-pulsecity-768.avif 768w, /images/optimized/v22-home-pulsecity-1200.avif 1200w, /images/optimized/v22-home-pulsecity-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/v22-home-pulsecity-480.webp 480w, /images/optimized/v22-home-pulsecity-768.webp 768w, /images/optimized/v22-home-pulsecity-1200.webp 1200w, /images/optimized/v22-home-pulsecity-1448.webp 1448w"
+  },
+  "/images/builds/v2-2/detail-pulsecity.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-pulsecity-480.avif 480w, /images/optimized/v22-detail-pulsecity-768.avif 768w, /images/optimized/v22-detail-pulsecity-1200.avif 1200w, /images/optimized/v22-detail-pulsecity-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-pulsecity-480.webp 480w, /images/optimized/v22-detail-pulsecity-768.webp 768w, /images/optimized/v22-detail-pulsecity-1200.webp 1200w, /images/optimized/v22-detail-pulsecity-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/detail-pulsecity2.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-pulsecity2-480.avif 480w, /images/optimized/v22-detail-pulsecity2-768.avif 768w, /images/optimized/v22-detail-pulsecity2-1200.avif 1200w, /images/optimized/v22-detail-pulsecity2-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-pulsecity2-480.webp 480w, /images/optimized/v22-detail-pulsecity2-768.webp 768w, /images/optimized/v22-detail-pulsecity2-1200.webp 1200w, /images/optimized/v22-detail-pulsecity2-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/detail-pulsecity3.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-pulsecity3-480.avif 480w, /images/optimized/v22-detail-pulsecity3-768.avif 768w, /images/optimized/v22-detail-pulsecity3-1200.avif 1200w, /images/optimized/v22-detail-pulsecity3-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-pulsecity3-480.webp 480w, /images/optimized/v22-detail-pulsecity3-768.webp 768w, /images/optimized/v22-detail-pulsecity3-1200.webp 1200w, /images/optimized/v22-detail-pulsecity3-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/home-PMShip.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/v22-home-PMShip-480.avif 480w, /images/optimized/v22-home-PMShip-768.avif 768w, /images/optimized/v22-home-PMShip-1200.avif 1200w, /images/optimized/v22-home-PMShip-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/v22-home-PMShip-480.webp 480w, /images/optimized/v22-home-PMShip-768.webp 768w, /images/optimized/v22-home-PMShip-1200.webp 1200w, /images/optimized/v22-home-PMShip-1448.webp 1448w"
+  },
+  "/images/builds/v2-2/detail-PMShip3.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-PMShip3-480.avif 480w, /images/optimized/v22-detail-PMShip3-768.avif 768w, /images/optimized/v22-detail-PMShip3-1200.avif 1200w, /images/optimized/v22-detail-PMShip3-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-PMShip3-480.webp 480w, /images/optimized/v22-detail-PMShip3-768.webp 768w, /images/optimized/v22-detail-PMShip3-1200.webp 1200w, /images/optimized/v22-detail-PMShip3-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/detail-PMShip.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-PMShip-480.avif 480w, /images/optimized/v22-detail-PMShip-768.avif 768w, /images/optimized/v22-detail-PMShip-1200.avif 1200w, /images/optimized/v22-detail-PMShip-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-PMShip-480.webp 480w, /images/optimized/v22-detail-PMShip-768.webp 768w, /images/optimized/v22-detail-PMShip-1200.webp 1200w, /images/optimized/v22-detail-PMShip-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/detail-PMShip2.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-PMShip2-480.avif 480w, /images/optimized/v22-detail-PMShip2-768.avif 768w, /images/optimized/v22-detail-PMShip2-1200.avif 1200w, /images/optimized/v22-detail-PMShip2-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-PMShip2-480.webp 480w, /images/optimized/v22-detail-PMShip2-768.webp 768w, /images/optimized/v22-detail-PMShip2-1200.webp 1200w, /images/optimized/v22-detail-PMShip2-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/home-GIEO.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/v22-home-GIEO-480.avif 480w, /images/optimized/v22-home-GIEO-768.avif 768w, /images/optimized/v22-home-GIEO-1200.avif 1200w, /images/optimized/v22-home-GIEO-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/v22-home-GIEO-480.webp 480w, /images/optimized/v22-home-GIEO-768.webp 768w, /images/optimized/v22-home-GIEO-1200.webp 1200w, /images/optimized/v22-home-GIEO-1448.webp 1448w"
+  },
+  "/images/builds/v2-2/detail-GIEO.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-GIEO-480.avif 480w, /images/optimized/v22-detail-GIEO-768.avif 768w, /images/optimized/v22-detail-GIEO-1200.avif 1200w, /images/optimized/v22-detail-GIEO-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-GIEO-480.webp 480w, /images/optimized/v22-detail-GIEO-768.webp 768w, /images/optimized/v22-detail-GIEO-1200.webp 1200w, /images/optimized/v22-detail-GIEO-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/detail-GIEO2.png": {
+    "width": 1672,
+    "height": 941,
+    "avifSrcSet": "/images/optimized/v22-detail-GIEO2-480.avif 480w, /images/optimized/v22-detail-GIEO2-768.avif 768w, /images/optimized/v22-detail-GIEO2-1200.avif 1200w, /images/optimized/v22-detail-GIEO2-1672.avif 1672w",
+    "webpSrcSet": "/images/optimized/v22-detail-GIEO2-480.webp 480w, /images/optimized/v22-detail-GIEO2-768.webp 768w, /images/optimized/v22-detail-GIEO2-1200.webp 1200w, /images/optimized/v22-detail-GIEO2-1672.webp 1672w"
+  },
+  "/images/builds/v2-2/home-GIEO2.png": {
+    "width": 1448,
+    "height": 1086,
+    "avifSrcSet": "/images/optimized/v22-home-GIEO2-480.avif 480w, /images/optimized/v22-home-GIEO2-768.avif 768w, /images/optimized/v22-home-GIEO2-1200.avif 1200w, /images/optimized/v22-home-GIEO2-1448.avif 1448w",
+    "webpSrcSet": "/images/optimized/v22-home-GIEO2-480.webp 480w, /images/optimized/v22-home-GIEO2-768.webp 768w, /images/optimized/v22-home-GIEO2-1200.webp 1200w, /images/optimized/v22-home-GIEO2-1448.webp 1448w"
   }
 }

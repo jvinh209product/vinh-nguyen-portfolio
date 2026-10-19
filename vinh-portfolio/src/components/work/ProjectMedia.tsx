@@ -14,7 +14,7 @@ export function ProjectMedia({ project }: { project: ProjectPreview }) {
       <ResponsiveImage className="project-media__image"
         src={`/images/projects/${projectImages[project.slug].home}`}
         alt={`${project.name} interface overview`} width={1448} height={1086}
-        sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 999px) calc(44.4vw - 15px), (max-height: 649px) calc(44.4vw - 15px), (min-width: 1440px) 624px, 43.2vw"
+        sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 767px) calc(50vw - 35px), (max-width: 999px) calc(46vw - 15px), (max-height: 649px) calc(44vw - 15px), (min-width: 1024px) 48vw, 50vw"
         loading="lazy" decoding="async" data-project-media="home"
         style={{ objectPosition: framing.position }}/>
     </div>
