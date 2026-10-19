@@ -32,12 +32,12 @@ export function Hero() {
   }, { scope, dependencies: [ready, reduced], revertOnUpdate: true });
 
   return <section id="top" className="hero" ref={scope}>
-    <div className="hero-top"><p className="eyebrow">BUSINESS ANALYST · PRODUCT OWNER · UX THINKING</p><span className="hero-edition">SELECTED WORK & PERSPECTIVES</span></div>
+    <div className="hero-top"><p className="eyebrow">PRODUCT BUILDER / PRODUCT DESIGNER / SYSTEMS THINKER</p><span className="hero-edition">PRODUCT WORK & INDEPENDENT BUILDS</span></div>
     <div className="hero-grid">
       <div className="hero-copy">
         <h1 tabIndex={-1}><span className="hero-line-mask"><span className="hero-line">Complex domains.</span></span><span className="hero-line-mask"><em className="hero-line">Clear experiences.</em></span></h1>
-        <p className="hero-description">I'm Vinh Nguyen. I connect business rules, product decisions, and user experience to make complex services easier to understand and use. My work spans personal finance, merchant operations, and debt tracking, alongside an exploration of digital wellbeing.</p>
-        <div className="hero-actions"><CTA href="#work" className="primary-link">Explore the work <ArrowDown size={17}/></CTA><CTA href="#thinking" className="text-link">How I think <ArrowUpRight size={17}/></CTA></div>
+        <p className="hero-description">I'm Vinh Nguyen. I work where product logic, human experience and technology meet — turning complex questions into clearer decisions, and promising ideas into experiences you can explore.</p>
+        <div className="hero-actions"><CTA href="/#work" className="primary-link">Explore the work <ArrowDown size={17}/></CTA><CTA href="/#builds" className="text-link">See what I've built <ArrowUpRight size={17}/></CTA></div>
       </div>
       <figure className="portrait-composition">
         <div className="portrait-halo" aria-hidden="true"/><HeroSystem/>

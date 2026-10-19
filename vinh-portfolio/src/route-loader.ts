@@ -10,6 +10,10 @@ const pages: Record<string, () => Promise<{ default: ComponentType }>> = {
   '/work/mseller': () => import('./pages/MSellerPage'),
   '/work/beerich': () => import('./pages/BeeRichPage'),
   '/work/moodify': () => import('./pages/MoodifyPage'),
+  '/work/betterbet': () => import('./pages/BetterBetPage'),
+  '/work/pulse-city': () => import('./pages/PulseCityPage'),
+  '/work/ship-it': () => import('./pages/ShipItPage'),
+  '/work/gieo': () => import('./pages/GieoPage'),
 };
 export async function loadPage(pathname: string) {
   const loader = pages[normalizePath(pathname)] || (() => import('./pages/NotFoundPage'));

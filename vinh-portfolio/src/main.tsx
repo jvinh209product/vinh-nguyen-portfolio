@@ -3,6 +3,7 @@ import App from './App';
 import { loadPage } from './route-loader';
 import { normalizePath, pageMetadata, routes } from './content/routes';
 import './styles/globals.css';
+import './styles/portfolio-v2.css';
 
 const root = document.getElementById('root')!;
 const pathname = normalizePath(location.pathname);
